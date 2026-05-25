@@ -1,0 +1,158 @@
+<header>
+    <a href="index.html#projects" class="btn">← Back to Projects</a>
+
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Space Change Analysis | Dennis Wambua</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">Dennis Wambua</a>
+</header>
+
+<!-- PROJECT DETAILS -->
+<section class="project-details">
+
+    <h1 class="project-title">
+        Asessing Green Space Change in Nairobi using NDVI.
+                    A comparison between 2015 and 2025.
+    </h1>
+
+    <p class="project-intro">
+        This project focused on analyzing the spatial and temporal changes in green spaces within Nairobi County 
+        between 2015 and 2025 using geospatial techniques. The study aimed to analyze urban environmental sustainability
+         by identifying areas experiencing vegetation loss and expansion.
+    </p>
+
+    <!-- OBJECTIVES -->
+    <div class="project-section">
+        <h2>Objectives</h2>
+        <ul>
+            <li>To map green space distribution for 2015 and 2025</li>
+            <li>To detect and quantify vegetation change over time</li>
+            <li>To identify areas with significant green space loss</li>
+            <li>To identify the drivers for green infrustructure loss</li>
+            <li>To support urban planning and environmental conservation</li>
+        </ul>
+    </div>
+
+    <!-- METHODOLOGY -->
+     <div class="project-section">
+        <h2>Methodology</h2>
+
+        <h3>Data Sources</h3>
+        <ul>
+            <li>Sentinel-2 Surface Reflectance (Level-2A), 10m resolution-Copernicus Open Access Hub</li>
+            <li>NASA EarthData </li>
+            <li>Open Streetmap </li>
+        </ul>
+        <!-- TOOLS -->
+    <div class="project-section">
+        <h2>Tools & Technologies</h2>
+        <ul>
+            <li>ArcGIS Pro</li>
+            <li>Google Earth Engine</li>
+            <li>QGIS</li>
+            <li>Remote Sensing Techniques</li>
+        </ul>
+    </div>
+        
+        </ul>
+        <h3>Preprocessing</h3>
+        <ul>
+            <li>Cloud and shadow masking using QA60 band</li>
+            <li>Clipping to Nairobi study area (~696 km²)</li>
+            <li>Resampling all bands to 10m spatial resolution</li>
+        </ul>
+        <h3>Land Cover Classification</h3>
+        <ul>
+            <li>Used Arcgis pro- classified into 6 categories; Built up, Dense Vegetation, Sparse Vegetation,
+                Bareland, Water, Grassland</li>
+            <li>Used Random Forest model</li>
+            <li>Output: LULC 2015, LULC 2025 and LULC Change map</li>
+            <div class="project-images">
+            <img src="Images/LULC 2015.jpg" alt="Study Area">
+            <img src="Images/lulc 2025.jpg" alt="Study Area">
+            <img src="Images/LULC Change.jpg" alt="Study Area">
+        </div>
+        
+        <h3>NDVI Calculation</h3>
+        <p>NDVI = (NIR – Red) / (NIR + Red)</p>
+        <p>NIR = Band 8, Red = Band 4 (Sentinel-2)</p>
+        <p>Produced; NDVI 2015, NDVI 2025 And NDVI change</p>
+        <div class="project-images">
+            <img src="Images/NDVI 2015.jpg" alt="Study Area">
+            <img src="Images/NDVI 2025.jpg" alt="Study Area">
+            <img src="Images/NDVI CHANGE.jpg" alt="Study Area">
+        </div>
+        
+        <h3>Population data</h3>
+        <ul>
+            <li>Clipped to the Nairobi boundary to assess how population affects green space loss. </li>
+        </ul>
+    </div>
+    
+    
+    <!-- RESULTS -->
+     <div class="project-section">
+        <h2>Results & Findings</h2>
+        
+        <h3>Quantified Change</h3>
+        <ul>
+            <li>Vegetation loss: ~34 km² (~4.9% of study area)</li>
+            <li>Vegetation gain: ~12 km²</li>
+            <li>Net loss: ~22 km²</li>
+        </ul>
+        
+        <h3>Spatial Patterns</h3>
+        <ul>
+            <li>High loss in urban core and industrial zones (Kariobangi, Industrial Area, Along Kangudo roadR876)</li>
+            <li>Stable zones include Karura Forest, Nairobi National Park, and peri-urban agricultural areas</li>
+        </ul>
+        
+        <h3>NDVI Value Interpretation</h3>
+        <ul>
+            <li>Dense vegetation: 0.6 – 0.8</li>
+            <li>Sparse vegetation: 0.2 – 0.4</li>
+            <li>Built-up/bare surfaces: -0.1 to 0.1</li>
+        </ul>
+    </div>
+    
+    <!-- CONCLUSION -->
+     <div class="project-section conclusion">
+        <h2>Conclusion & Recommendations</h2>
+        <p>
+        The results indicate significant loss of green space driven by rapid urban expansion. Critical areas near economic and residential growth zones are most affected. Without strategic intervention, Nairobi faces increased urban heat island effects, declining air quality, and elevated flood risks due to reduced vegetation cover.
+    </p>
+</div>
+
+    
+    <!-- MAPS -->
+    <div class="project-section">
+        <h2>Maps & Visual Outputs</h2>
+
+        <div class="project-images">
+            <img src="Images\NDVI 2020.jpg" alt="Green Space 2020">
+            <img src="Images\NDVI 2025.jpg" alt="Green Space 2025">
+            <img src="Images\NDVI CHANGE.jpg" alt="Change Detection Map">
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="back-btn">
+        <a href="index.html#projects">⬅ Back</a>
+    </div>
+
+</section>
+
+</body>
+</html>

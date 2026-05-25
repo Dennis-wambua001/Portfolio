@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Health Analysis | Dennis Wambua</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="logo">Dennis Wambua</a>
+</header>
+
+<!-- PROJECT DETAILS -->
+<section class="project-details">
+
+    <h1 class="project-title">
+        Rice Crop Health Monitoring in Mwea Irrigation Scheme Using Sentinel-2 NDVI (2025)
+    </h1>
+
+    <p class="project-intro">
+        Using Sentinel-2 imagery and 489+ plot-level NDVI data points across 12 months,
+         this project identifies stress-prone rice blocks in the Mwea Irrigation Scheme – enabling 
+         targeted interventions for Kenya’s most productive rice region.
+    </p>
+
+    <!-- OBJECTIVES -->
+    <div class="project-section">
+        <h2>Objectives</h2>
+        <ul>
+            <li>Monitor crop health across all rice blocks using satellite data</li>
+            <li>Identify stress-prone areas for targeted intervention</li>
+            <li>Analyze seasonal crop growth patterns</li>
+            <li>Support data-driven agricultural decision-making</li>
+        </ul>
+    </div>
+    <h2>Study Area</h2>
+        <p>
+            Mwea Irrigation Scheme, Kirinyaga County – covering approximately 26,000 acres,
+            supporting over 7,500 farming households across five major sections.
+        </p>
+        <div class="study-image">
+            <img src="Images/Mwea-study map.jpeg" alt="Study Area">
+        </div>
+
+    <!-- METHODOLOGY -->
+    <div class="project-section">
+        <h2>Methodology</h2>
+
+        
+
+        <h3>Data Sources</h3>
+        <ul>
+            <li>Sentinel-2 imagery (10m resolution, 5-day revisit)</li>
+            <li>12 monthly cloud-free composites (Jan–Dec 2025)</li>
+            <li>Manually digitized 489+ individual rice plots from google satellite in Arcgis Pro</li>
+        </ul>
+
+        <h3>Indices Used</h3>
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Formula</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>NDVI</td>
+                    <td>(NIR – Red) / (NIR + Red)</td>
+                    <td>Crop health monitoring</td>
+                </tr>
+                <tr>
+                    <td>NDWI</td>
+                    <td>(Green – NIR) / (Green + NIR)</td>
+                    <td>Vegetation water content</td>
+                </tr>
+                <tr>
+                    <td>NDMI</td>
+                    <td>(NIR – SWIR) / (NIR + SWIR)</td>
+                    <td>Moisture stress detection</td>
+                </tr>
+                <tr>
+                    <td>MNDWI</td>
+                    <td>(Green – SWIR) / (Green + SWIR)</td>
+                    <td>Flooded field mapping</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Tools</h3>
+        <ul>
+            <li>Google Earth Engine – image processing & index computation</li>
+            <li>Arcgis pro - Digitizing the rice plots</li>
+            <li>QGIS for map making</li>
+            <li>Excel</li>
+        </ul>
+
+        <h3>Preprocessing</h3>
+        <ul>
+            <li>Cloud masking using QA60 band</li>
+            <li>Extracted mean index values per plot per month</li>
+            <li>Total dataset: 90,000+ observations per index</li>
+        </ul>
+    </div>
+
+    <!-- ANALYSIS -->
+    <div class="project-section">
+        <h2>Analysis</h2>
+        <ul>
+            <li>Computed monthly NDVI, NDWI, NDMI, MNDWI for each plot</li>
+            <li>Aggregated results by irrigation blocks</li>
+            <li>Compared NDVI trends with rainfall patterns</li>
+            <li>Identified crop growth stages (planting → peak → harvest)</li>
+            <li>Ranked blocks based on average NDVI</li>
+        </ul>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="project-section">
+        <h2>Results & Findings</h2>
+
+        <h3>Seasonal Patterns</h3>
+        <ul>
+            <li>Peak NDVI in April–May (long rains)</li>
+            <li>Second peak in October–November (short rains)</li>
+            <li>Low NDVI during dry season (June–September)</li>
+         <div class="study-image">
+            <img src="Images/Picture1.png" alt="NDVI Chart">
+        </div>
+        </ul>
+
+        <h3>Crop Health Ranking</h3>
+        <table class="project-table">
+            <thead>
+                <tr>
+                    <th>Block</th>
+                    <th>Scaled NDVI</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mwea</td>
+                    <td>7.59</td>
+                    <td>Healthiest – optimal conditions</td>
+                </tr>
+                <tr>
+                    <td>Cunkia/Mutithi</td>
+                    <td>6.69</td>
+                    <td>Moderately good</td>
+                </tr>
+                <tr>
+                    <td>Thiba</td>
+                    <td>6.23</td>
+                    <td>Moderately good</td>
+                </tr>
+                <tr>
+                    <td>Wamumu</td>
+                    <td>5.92</td>
+                    <td>Stressed – priority intervention</td>
+                </tr>
+                <tr>
+                    <td>Karaba</td>
+                    <td>5.40</td>
+                    <td>Most stressed – critical priority</td>
+                </tr>
+            </tbody>
+        </table>
+          
+        <h3>Key Insights</h3>
+        <ul>
+            <li>Strong correlation between NDVI and moisture indices</li>
+            <li>Water availability is the main driver of crop performance</li>
+            <li>Clear spatial variation in crop health across blocks</li>
+        </ul>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="project-section conclusion">
+        <h2>Conclusion & Recommendations</h2>
+
+        <p>
+            The analysis reveals strong spatial disparities in crop health across the Mwea Irrigation Scheme.
+            While Mwea block shows optimal performance, Karaba and Wamumu consistently exhibit stress,
+            likely due to water limitations or soil conditions.
+        </p>
+
+        <h3>Limitations</h3>
+        <ul>
+            <li>No ground-truth validation data</li>
+            <li>NDVI saturation at high biomass levels</li>
+            <li>Monthly composites may miss short-term stress events</li>
+        </ul>
+
+        <h3>Recommendations</h3>
+        <ul>
+            <li>Prioritize intervention in Karaba and Wamumu blocks</li>
+            <li>Implement real-time satellite monitoring (5-day updates)</li>
+            <li>Train extension officers to use NDVI-based decision tools</li>
+        </ul>
+    </div>
+
+    <!-- MAPS -->
+    <div class="project-section">
+        <h2>Maps & Visual Outputs</h2>
+
+        <div class="project-images">
+            <img src="Images/Mwea NDVI.jpeg" alt="NDVI Map">
+            <img src="Images/Picture5.png" alt="NDVI Map">
+            <img src="Images/Picture2.png" alt="NDVI Map">
+             <img src="Images/Picture3.png" alt="NDVI Map">
+              <img src="Images/Picture4.png" alt="NDVI Map">
+        </div>
+    </div>
+
+    <!-- BACK BUTTON -->
+    <div class="back-btn">
+        <a href="index.html#projects">⬅ Back</a>
+    </div>
+
+</section>
+
+</body>
+</html>
