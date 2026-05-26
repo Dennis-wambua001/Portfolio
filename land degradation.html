@@ -1,18 +1,427 @@
-<div class="pdf-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Degradation Assessment - Mavoko Sub-County</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<iframe 
-src="Images/Land Degradation.pdf#toolbar=0"
-width="100%"
-height="800">
-</iframe>
+        body {
+            background: #d0d1d4;
+            color: #0c0101;
+        }
 
-</div>
+        .project-details {
+            padding: 10rem 9% 5rem;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-<script>
-document.addEventListener("contextmenu", function(e){
-e.preventDefault();
-});
-</script>
+        /* Title */
+        .project-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #0c0101;
+            text-align: center;
+        }
 
-<!-- BACK BUTTON -->
-<a href="index.html#projects" class="back-btn">← Back </a>
+        /* Author info - removed from page 1 as requested */
+        .project-author {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #1a4ec7;
+            margin-bottom: 3rem;
+        }
+
+        .project-intro {
+            font-size: 1.4rem;
+            
+            color: #020101;
+            margin-bottom: 3rem;
+        }
+
+        /* Sections */
+        .project-section {
+            margin-bottom: 3rem;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a4ec7;
+            border-bottom: 2px solid #68e1e7;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-section h3 {
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1a4ec7;
+        }
+
+        .project-section h4 {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #0c0101;
+        }
+
+        .project-section p {
+            font-size: 1.4rem;
+            color: #020708;
+            margin-bottom: 1rem;
+        }
+
+        .project-section ul {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-section ul li {
+            font-size: 1.4rem;
+            color: #020708;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Images */
+        .project-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-images img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s ease;
+        }
+
+        .project-images img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Image placeholder for maps */
+        .image-placeholder {
+            background: #e8e8e8;
+            border: 2px dashed #1a4ec7;
+            border-radius: 1rem;
+            padding: 4rem 2rem;
+            text-align: center;
+            font-size: 1.4rem;
+            color: #1a4ec7;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .image-placeholder:hover {
+            background: #d0d1d4;
+        }
+
+        /* Conclusion box */
+        .conclusion {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            border-left: 4px solid #68e1e7;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+
+        .conclusion h2 {
+            border-bottom: none;
+            display: block;
+        }
+
+        /* Back button */
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 1rem auto;
+            padding: 1rem 1.4rem;
+            background: #68e1e7;
+            color: #1a4ec7;
+            border-radius: 1.4rem;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+            box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: none;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .project-details {
+                padding: 8rem 5% 3rem;
+            }
+            .project-title {
+                font-size: 2.4rem;
+            }
+            .project-section h2 {
+                font-size: 2rem;
+            }
+            .project-section p, 
+            .project-section ul li {
+                font-size: 1.3rem;
+            }
+            .image-placeholder {
+                padding: 2rem 1rem;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="project-details">
+
+        <!-- Title -->
+        <h1 class="project-title">SPATIO-TEMPORAL ASSESSMENT OF LAND DEGRADATION AND CLIMATE STRESS HOTSPOTS IN MAVOKO SUB-COUNTY, MACHAKOS COUNTY, KENYA (2016-2026)</h1>
+
+        <!-- Author - removed from page 1 as requested -->
+        <div class="project-author">
+            Prepared by Dennis Wambua<br>
+            Geospatial Analyst | GIS • Remote Sensing • Spatial Data<br>
+            17th May 2026
+        </div>
+
+        <!-- Introduction -->
+        <div class="project-section">
+            <p>This study conducts a spatio-temporal assessment of land degradation and climate stress hotspots in Mavoko Sub-County, Machakos County, Kenya, over a 10-year period (2016-2026).</p>
+            <p>Rapid urbanization, industrial intensification, and climate variability are transforming Mavoko's landscape from dryland vegetation and grazing areas to built-up settlements, industrial zones, and transport corridors (Mombasa Road, SGR, JKIA periphery).</p>
+            
+            <h3>Key questions addressed:</h3>
+            <ul>
+                <li>Where are land degradation hotspots located?</li>
+                <li>Which areas require priority intervention by 2026?</li>
+            </ul>
+            
+            <h3>Sources of Data:</h3>
+            <p>Sentinel-2, CHIRPS rainfall, ERA5-Land temperature, NASA Earthdata soil, NASA SRTM 30m elevation.</p>
+        </div>
+
+        <!-- Objectives -->
+        <div class="project-section">
+            <h2>Objectives</h2>
+            
+            <h3>General Objective</h3>
+            <p>To assess the spatial distribution of land degradation and identify hotspot areas in Mavoko Sub-County, Machakos County using remote sensing and GIS techniques.</p>
+            
+            <h3>Specific Objectives</h3>
+            <ul>
+                <li>To analyze land use/land cover changes between 2016 and 2026 in Mavoko Sub-County, Machakos County.</li>
+                <li>To assess environmental conditions influencing land degradation using NDVI and climate variables (rainfall and temperature).</li>
+                <li>To model and map land degradation intensity and hotspots using weighted overlay and kernel density analysis.</li>
+            </ul>
+        </div>
+
+        <!-- Study Area -->
+        <div class="project-section">
+            <h2>Study Area</h2>
+            
+           <!-- For any image in the project -->
+            <div class="project-images">
+                <img src="Images/macha/Study map.png" alt="Description of image" style="width: 100%; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            </div>
+            
+            <p><strong>Mavoko Sub-County</strong> is located in the Eastern region of Kenya. Area: approximately 963 km². Population: 322,499 (2019 census). Semi-arid climate.</p>
+        </div>
+
+        <!-- Methodology -->
+        <div class="project-section">
+            <h2>Methodology</h2>
+            
+            <p>A multi-step GIS and remote sensing workflow integrating satellite imagery, climate data, soil data, and weighted overlay analysis.</p>
+            
+            <p><strong>Workflow:</strong> [Data] → [Preprocess] → [LULC] → [NDVI] → [Climate+Elevation+Soil] → [Normalize] → [Weighted Overlay] → [Hotspots] → [Validation]</p>
+            
+            <h3>Satellite Data Processing</h3>
+            <p>Sentinel-2 L2A (10m resolution) for 2016 and 2026. Preprocessing: Clip to Mavoko boundary, cloud masking using SCL band, normalization.</p>
+        </div>
+
+        <!-- LULC -->
+        <div class="project-section">
+            <h2>Land Use/Land Cover (LULC)</h2>
+            
+            <p><strong>Method:</strong> Supervised classification (Random Forest)</p>
+            <p><strong>Classes:</strong> Vegetation, Bare land, Built-up, Water</p>
+            <p><strong>Outputs:</strong> LULC 2016, LULC 2026, LULC Change map</p>
+            
+            <!-- IMAGE PLACEHOLDER - LULC Maps -->
+             <div class="project-images">
+                <img src="Images/macha/LULC 2016.jpg" alt="Description of image" style="width: 100%;
+                 border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <img src="Images/macha/LULC 2026.jpg">
+                <img src="Images/macha/LULC change.jpg">
+            </div>
+            
+            <p><strong>Key findings:</strong> Bare land expansion: 673.05 km² | Land restoration: 109.05 km² | Urban expansion: 28.05 km²</p>
+        </div>
+
+        <!-- NDVI -->
+        <div class="project-section">
+            <h2>NDVI (Vegetation Health)</h2>
+            
+            <p><strong>Formula:</strong> (NIR - Red) / (NIR + Red)</p>
+            <p><strong>Outputs:</strong> NDVI 2016, NDVI 2026, NDVI Change map</p>
+            
+            <!-- IMAGE PLACEHOLDER - NDVI Maps -->
+            <div class="project-images">
+                <img src="Images/macha/NDVI 2016.jpg" alt="Description of image" style="width: 100%;
+                 border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <img src="Images/macha/NDVI 2026.jpg">
+                <img src="Images/macha/NDVI Change map.jpg">
+            </div>
+        </div>
+
+        <!-- Climate Data -->
+        <div class="project-section">
+            <h2>Climate Data</h2>
+            
+            <p><strong>Rainfall:</strong> CHIRPS (5km) → Rainfall variability index</p>
+            <p><strong>Temperature:</strong> ERA5-Land (9km) → Temperature stress index</p>
+            
+            <!-- IMAGE PLACEHOLDER - Climate Maps -->
+            <div class="project-images">
+                <img src="Images/macha/Rainfall Map.jpg">
+                <img src="Images/macha/Layout3.jpg">
+            </div>
+        </div>
+
+        <!-- Soil & Elevation -->
+        <div class="project-section">
+            <h2>Soil & Elevation Data</h2>
+            
+            <p><strong>Soil:</strong> Downloaded from NASA Earthdata (SRTM + SoilGrids)</p>
+            <p><strong>Elevation:</strong> NASA SRTM 30m</p>
+            
+            <!-- IMAGE PLACEHOLDER - Soil & Elevation -->
+            <div class="project-images">
+                <img src="Images/macha/Soil Map.jpg">
+                <img src="Images/macha/Slope map.jpg">
+            </div>
+            
+            <h3>Normalization (1-5 scale)</h3>
+            <p>All layers converted to a common scale: 1 = Very low risk, 2 = Low risk, 3 = Moderate risk, 4 = High risk, 5 = Very high risk</p>
+            
+            <h3>Weighted Overlay</h3>
+            <p><strong>Formula:</strong> Degradation Index = Σ (Layerᵢ × Weightᵢ)</p>
+            <p><strong>Weights:</strong> NDVI change (30%), LULC change (30%), Rainfall (10%), Temperature (10%), Soil (10%), Slope (10%)</p>
+            
+            <!-- IMAGE PLACEHOLDER - Degradation Map -->
+             <div class="project-images">
+                <img src="Images/macha/Degradation.jpg">
+            </div>
+        </div>
+
+        <!-- Hotspot Analysis -->
+        <div class="project-section">
+            <h2>Hotspot Analysis</h2>
+            
+            <p><strong>Method:</strong> Kernel Density (Getis-Ord Gi*)</p>
+            <p><strong>Output:</strong> Statistically significant degradation clusters</p>
+            
+            <!-- IMAGE PLACEHOLDER - Hotspot Maps -->
+            <div class="project-images">
+                <img src="Images/macha/Hotspot.jpg">
+            </div>
+            
+            <h3>Validation</h3>
+            <p>Google Earth historical imagery, OpenStreetMap comparison, High-resolution imagery spot checks.</p>
+        </div>
+
+        <!-- Results -->
+        <div class="project-section">
+            <h2>Results</h2>
+            
+            <h3>Urbanization Areas</h3>
+            <p>Urbanization was concentrated in four main areas:</p>
+            <ul>
+                <li><strong>Athi River</strong> - Vegetation converted to built-up (residential/industrial expansion)</li>
+                <li><strong>Mihang'o (near Utawala)</strong> - Rapid peri-urban growth, loss of green buffer</li>
+                <li><strong>Syokimau</strong> - Large-scale housing development replacing dryland vegetation</li>
+                <li><strong>Mlolongo</strong> - Commercial and residential densification along Mombasa Road</li>
+            </ul>
+            
+            <h3>Bare Land Expansion Areas</h3>
+            <p>Bare land increase occurred in six locations:</p>
+            <ul>
+                <li><strong>Katani</strong> - Land cleared for future development, left exposed</li>
+                <li><strong>Kinanie</strong> - Clearing without immediate construction</li>
+                <li><strong>Near Lukenya Girls COE School</strong> - Surrounding land stripped of vegetation</li>
+                <li><strong>Ndovoini Market area</strong> - Market expansion leading to bare soil</li>
+                <li><strong>Kitanga Market area</strong> - Farmland soil left unprotected</li>
+                <li><strong>Konza area</strong> - Clearing for future development (Konza Technopolis influence)</li>
+            </ul>
+            
+            <h3>Degradation Intensity</h3>
+            
+            <h4>Very High Degradation (5 locations)</h4>
+            <ul>
+                <li><strong>Katani</strong> - Land cleared, left bare, no restoration</li>
+                <li><strong>Kinanie</strong> - Clearing without development → exposed soil</li>
+                <li><strong>Near Lukenya Girls COE School</strong> - Surrounding vegetation stripped, erosion active</li>
+                <li><strong>Ndovoini Market area</strong> - Market-related clearing, compacted bare soil</li>
+                <li><strong>Kitanga Market area</strong> - Commercial clearing, unprotected bare land</li>
+            </ul>
+            
+            <h4>High Degradation (2 areas)</h4>
+            <ul>
+                <li><strong>Konza area</strong> - Clearing for future technopolis, currently transitional bare land</li>
+                <li><strong>Parts of Mlolongo</strong> - Urbanized but with residual bare patches between buildings</li>
+            </ul>
+            
+            <h4>Moderate Degradation</h4>
+            <ul>
+                <li><strong>Athi River (edges)</strong> - Urban core built, fringes show transitioning bare land</li>
+                <li><strong>Syokimau (periphery)</strong> - New developments with incomplete vegetation recovery</li>
+            </ul>
+            
+            <h4>Low Degradation</h4>
+            <ul>
+                <li><strong>Athi River riparian corridor</strong> - Persistent vegetation, water availability protects</li>
+                <li><strong>Isolated patches between settlements</strong> - Minimal human pressure, stable cover</li>
+            </ul>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="project-section">
+            <h2>Recommendations</h2>
+            
+            <ul>
+                <li><strong>Immediate revegetation of very high hotspots:</strong> Katani, Kinanie, near Lukenya Girls COE School, Ndovoini Market, and Kitanga Market require immediate planting of drought-tolerant native species on all bare land parcels. No further clearing should be permitted without an approved restoration plan.</li>
+                <li><strong>Mandate erosion control on all cleared land:</strong> Any land clearing, whether for construction, markets, or farming must implement erosion control measures (silt fences, mulching, temporary grass cover) before approval. Bare land left exposed for more than 3 months should face penalties.</li>
+                <li><strong>Enforce green space bylaws in urbanizing areas:</strong> In Athi River, Syokimau, Mlolongo, and Mihang'o (Utawala), require minimum 15% vegetation cover per new development. Protect existing mature trees during construction and establish urban tree planting programs.</li>
+                <li><strong>Protect the Athi River riparian corridor:</strong> Declare the Athi River riparian corridor as a protected zone with no further clearing. Establish a minimum 30m buffer from the river where development is prohibited. This is Mavoko's last large stable area.</li>
+                <li><strong>Establish remote sensing monitoring system:</strong> Deploy a 6-month satellite monitoring system using Sentinel-2 to detect new bare land expansion early. Integrate hotspot maps into Machakos County GIS and prioritize very high hotspots for climate adaptation funding.</li>
+            </ul>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="project-section conclusion">
+            <h2>Conclusion</h2>
+            <p>This study assessed land degradation and climate stress hotspots in Mavoko Sub-County (2016-2026) using remote sensing, GIS and weighted overlay modeling. Urban expansion concentrated in Athi River, Mihang'o, Syokimau and Mlolongo. Bareland expansion the highest degradation risk occurred in Katani, Kinanie, Lukenya Girls area, Ndovoini Market, Kitanga Market, and Konza area. Very high degradation hotspots (0.000049-0.000063) align exactly with these bareland zones confirming that clearing without restoration is the primary driver of degradation. The Athi River riparian corridor remains the only large stable area requiring immediate protection. This hotspot map provides a spatial decision-support system for targeted interventions.</p>
+        </div>
+
+        <!-- BACK BUTTON -->
+    <div class="back-btn">
+        <a href="index.html#projects">Back</a>
+    </div>
+
+</body>
+</html>

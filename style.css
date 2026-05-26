@@ -403,14 +403,7 @@ span {
     border-radius: 1rem;
 }
 
-.back-btn {
-    margin-top: 3rem;
-}
 
-.back-btn a {
-    font-size: 2.2rem;
-    color: #680ad3;
-}
 
 .project-section h3 {
     font-size: 1.6rem;
@@ -511,15 +504,6 @@ span {
     transform: scale(1.02);
 }
 
-.back-btn {
-    margin-top: 3rem;
-}
-
-.back-btn a {
-    font-size: 2.2rem;
-    color: var(--second-bg-color);
-    text-decoration: none;
-}
 
 .back-btn a:hover {
     text-decoration: underline;
@@ -577,22 +561,13 @@ span {
     transform: scale(1.05);
 }
 
-.pdf-container {
-    width: 100%;
-    margin-top: 2rem;
-}
-
-.pdf-container iframe {
-    border: none;
-    border-radius: 15px;
-}
 
 .back-btn {
     display: block;
     width: fit-content;
     margin: 40px auto;
     padding: 14px 35px;
-    font-size: 10rem;
+    font-size: 1.4rem;
     font-weight: 1000;
     background: var(--main-color);
     color: white;
@@ -659,20 +634,20 @@ span {
 
 /* CONTACT SECTION */
 .contact {
-    padding: 8rem 9% 5rem;
+    padding: 2rem 9% 5rem;
     text-align: center;
 }
 
 .contact-container {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
 .contact-box {
     background: rgba(0, 0, 0, 0.3);
-    padding: 2rem 3rem;
+    padding: 2rem ;
     border-radius: 1rem;
     border: 2px solid transparent;
     transition: 0.3s ease;
@@ -879,3 +854,4 @@ span {
         font-size: 1.6rem;
     }
 }
+
