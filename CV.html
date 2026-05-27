@@ -18,7 +18,7 @@
         }
 
         .cv {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
             padding: 3rem;
@@ -28,7 +28,7 @@
 
         /* Name & Title */
         .cv h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             margin-bottom: 0.3rem;
             text-align: center;
         }
@@ -76,7 +76,6 @@
 
         .cv p {
             font-size: 1.2rem;
-            line-height: 1.6;
             color: #333;
             margin-bottom: 0.5rem;
         }
@@ -158,44 +157,64 @@
         }
 
         /* Mobile */
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                padding: 2rem;
+            }
             .cv {
+                max-width: 94% !important;
+                width: 94% !important;
+                margin: 0.1 !important;
+                padding: 2rem 1.5rem !important;
+                border-radius: 5 !important;
+                box-shadow: none !important;
+                box-sizing: border-box !important;
+            }
+
+            .cv {
+                max-width: 90%;
                 padding: 1.5rem;
+                border-radius: 0;
             }
             .cv h1 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+                max-width: 100%;
             }
             .cv h2 {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                max-width: 100%;
             }
             .cv h3 {
-                font-size: 1.2rem;
+                font-size: 1rem;
+                max-width: 100%;
             }
             .cv h4 {
                 font-size: 1rem;
+                max-width: 100%;
             }
-            .cv p {
-            font-size: 1.2rem;
-            line-height: 1;
-            color: #333;
-            margin-bottom: 0.5rem;
+
+            .cv .edu-item p {
+                font-size: 1rem;
+                color: #555;
             }
+
             .cv p, .cv ul li {
                 font-size: 1rem;
+                max-width: 100%;
             }
             .cv .contact {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #555;
             margin-bottom: 2rem;
-            
             text-align: center;
-            font-size: 1.1rem;
             }
             .cv .contact a {
             color: #1a4ec7;
             text-decoration: none;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
             }
 
             .back-btn {
@@ -227,12 +246,12 @@
         <h1>Dennis Wambua</h1>
         <h2>Geospatial Analyst | Data Analyst | Environmentalist</h2>
         <div class="contact">
-            Department of Humanities and Languages<br>
+            Department of Humanities<br>
             School of Education and Social Sciences<br>
             Karatina University, P.O Box 1957-10101<br>
             <a href="mailto:dwambua375@gmail.com">dwambua375@gmail.com</a> | 
             <a href="mailto:samson.wambua@s.karu.ac.ke">samson.wambua@s.karu.ac.ke</a><br>
-            Mobile: +254(0) 759 790 998 | 711 891 643<br>
+            Mobile: +254 759 790 998 | 711 891 643<br>
             Website: <a href="https://karu.ac.ke" target="_blank">https://karu.ac.ke</a>
         </div>
 
