@@ -34,12 +34,16 @@
             <p>Forests are vital for climate regulation, biodiversity conservation, and sustainable livelihoods. In Nyeri County, changes in Land Use and Land Cover (LULC) have significantly influenced forest dynamics over time. This study analyzes forest cover change between 2019 and 2025, and projects trends to 2030 using LULC data in Google Earth Engine (GEE). The aim is to assess spatial and temporal forest variations and support data-driven land management and conservation planning.</p>
         </div>
 
+        <div class="project-images">
+            <img src="Images/Screenshot 2026-05-27 170348.png" alt="Satellite Image of Nyeri County">
+        </div>
+
         <!-- Objectives -->
         <div class="project-section">
             <h2>Objectives</h2>
             <ul>
                 <li>To quantify changes in forest area (gain or loss) over time.</li>
-                <li>To assess spatial patterns and drivers of forest cover change.</li>
+                <li>To assess spatial patterns of forest cover change.</li>
                 <li>To support data-driven decision-making for sustainable land management.</li>
             </ul>
         </div>
@@ -49,14 +53,13 @@
             <h2>Data and Methodology</h2>
             
             <p><strong>Data Source:</strong> ESA World Cover datasets (Sentinel-1 & Sentinel-2, 10 m resolution).</p>
-            <p><strong>Years of Analysis:</strong> 2019, 2025, and projected 2030.</p>
+            <p><strong>Years of Analysis:</strong> 2019, 2025.</p>
             <p><strong>Preprocessing:</strong> Clipping images to Nyeri AOI and filtering for forest class.</p>
             
             <h3>Analysis Steps:</h3>
             <ol>
                 <li>Extract forest pixels (Class = 10).</li>
                 <li>Calculate forest area (km²) for each year.</li>
-                <li>Predict forest trends for 2030 using linear projection.</li>
                 <li>Visualize spatial distribution and quantify changes using charts.</li>
             </ol>
             
@@ -64,38 +67,58 @@
             <p>Google Earth Engine (JavaScript API), ArcGIS Pro for final visualization.</p>
         </div>
 
+        <!-- 2019 Map -->
+        <div class="project-section">
+            <h2>2019 LULC</h2>
+            
+            <p>The In 2019, forest cover (Trees) was approximately 1,507.5 km². Other land cover types included Crops (843.8 km²), Rangeland (566.5 km²), and Built Area (453.0 km²).</p>
+            
+            <div class="project-images">
+                <img src="Images/Nyeri-LULC2015.jpg" alt="Forest Cover 2025">
+            </div>
+        </div>
+
+        <!--2025 Map -->
+        <div class="project-section">
+            <h2>2025 LULC</h2>
+            
+            <p>By 2025, forest cover (Trees) increased to approximately 1,662.3 km². This represents a net gain of ~154.8 km² over six years.</p>
+            <div class="project-images">
+                <img src="Images/Nyeri-LULC2025.jpg" alt="Forest Cover 2025">
+            </div>
+        </div>
+        
+        <!--LULC CHANGE -->
+        <div class="project-section">
+            <h2>LULC Change</h2>
+            
+            <p>The The change map reveals spatial patterns of forest dynamics across Nyeri County</p>
+            <p>Critical Finding: Reforestation (241.3 km²) outpaces deforestation (91.3 km²), resulting in a net
+                 gain of ~150 km². Gains are concentrated in protected water towers, while losses occur near human settlements.</p>
+            
+            <div class="project-images">
+                <img src="Images/Nyeri-Change map.jpg" alt="Forest Cover 2025">
+            </div>
+        </div>
+
         <!-- Results and Discussion -->
         <div class="project-section">
             <h2>Results and Discussion</h2>
             
             <p>Forest cover <strong>increased between 2019 and 2025</strong>, mainly in the <strong>Aberdare Ranges and Mt. Kenya slopes</strong>.</p>
-            <p>Total forest area rose by approximately <strong>15,393.2737 km²</strong>, showing positive reforestation and recovery trends.</p>
+            <p>Total forest area rose by approximately <strong>149.94 km²</strong>, showing positive reforestation and recovery trends.</p>
             
-            <div class="project-images">
-                <img src="Images/Screenshot 2026-05-27 170348.png" alt="Satellite Image of Nyeri County">
-                <img src="Images/Nyeri-LULC2015.jpg" alt="Forest Cover 2019">
-            </div>
-        </div>
-
-        <!-- Predicted 2030 Map -->
-        <div class="project-section">
-            <h2>Predicted 2030 Map</h2>
-            
-            <p>The <strong>Predicted 2030 map</strong> suggests continued forest growth under current conservation efforts.</p>
-            <p>Urban centers (Nyeri Town, Karatina) show minimal change, indicating stable land management practices.</p>
-            
-            <div class="project-images">
-                <img src="Images/Nyeri-LULC2025.jpg" alt="Forest Cover 2025">
-                <img src="Images/nyeri/predicted-forest-2030.jpg" alt="Predicted Forest Cover 2030">
-            </div>
         </div>
 
         <!-- Interpretation and Conclusion -->
         <div class="project-section conclusion">
             <h2>Interpretation and Conclusion</h2>
-            <p>The analysis demonstrates <strong>positive forest cover growth</strong> in Nyeri County over the study period. This trend reflects the success of reforestation initiatives, sustainable land-use practices, and policy interventions.</p>
-            <p>The integration of LULC datasets and GEE cloud computing proved efficient for long-term environmental monitoring and planning.</p>
-            <p>These results emphasize the role of GIS and remote sensing in supporting data-driven forest conservation and climate resilience.</p>
+            <p>Nyeri County shows a net forest increase of ~154.8 km² between 2019 and 2025, with reforestation (241.3 km²) exceeding deforestation (91.3 km²). Gains are concentrated in the Aberdare Ranges and Mt. Kenya slopes – demonstrating that protected area management is effective. However, 
+                deforestation near expanding built-up areas (Built Area +160.6 km²) requires targeted intervention.</p>
+            <p><strong>Recommendations:</p>
+            <p>Strengthen forest protection in water towers (already working)</p>
+            <p>Create buffer zones around expanding settlements</p>
+            <p>Repeat LULC analysis every 2–3 years to track trends</p>
         </div>
 
 
