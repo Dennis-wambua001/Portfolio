@@ -35,7 +35,7 @@
 
         .cv h2 {
             font-size: 1.6rem;
-            color: #1a4ec7;
+            color: #010305;
             font-weight: 500;
             margin-bottom: 0.5rem;
             text-align: center;
@@ -138,19 +138,83 @@
             margin: 0.2rem 0;
         }
 
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 1rem auto;
+            padding: 1rem 1.4rem;
+            background: #68e1e7;
+            color: #1a4ec7;
+            border-radius: 1.4rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+            box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
+        }
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: none;
+        }
+
         /* Mobile */
-        @media (max-width: 600px) {
+        @media (max-width: 1000px) {
             .cv {
                 padding: 1.5rem;
             }
             .cv h1 {
-                font-size: 2.2rem;
+                font-size: 1.6rem;
+            }
+            .cv h2 {
+                font-size: 1.2rem;
             }
             .cv h3 {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+            }
+            .cv h4 {
+                font-size: 1rem;
+            }
+            .cv p {
+            font-size: 1.2rem;
+            line-height: 1;
+            color: #333;
+            margin-bottom: 0.5rem;
             }
             .cv p, .cv ul li {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            .cv .contact {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            
+            text-align: center;
+            font-size: 1.1rem;
+            }
+            .cv .contact a {
+            color: #1a4ec7;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.1rem;
+            }
+
+            .back-btn {
+                display: block;
+                width: fit-content;
+                margin: 1rem auto;
+                padding: 1rem 1.4rem;
+                background: #68e1e7;
+                color: #1a4ec7;
+                border-radius: 1rem;
+                text-decoration: none;
+                font-size: 0.6rem;
+                font-weight: 600;
+                transition: 0.3s ease;
+                box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
+            }
+            .back-btn:hover {
+               transform: scale(1.05);
+               box-shadow: none;
             }
         }
     </style>
@@ -273,7 +337,10 @@
             <p>Website: <a href="https://profiles.karu.ac.ke/wp-content/uploads/2024/01/Dr.-Tom-Ouna.pdf" target="_blank">https://profiles.karu.ac.ke/wp-content/uploads/2024/01/Dr.-Tom-Ouna.pdf</a></p>
         </div>
 
-
+        <!-- BACK BUTTON -->
+        <div class="back-btn">
+            <a href="index.html#home">Back</a>
+        </div>
     </div>
 
 </body>

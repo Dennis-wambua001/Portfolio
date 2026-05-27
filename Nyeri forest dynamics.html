@@ -3,124 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest Dynamics in Nyeri | Dennis Wambua</title>
-
+    <title>Forest Cover Dynamics - Nyeri County</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-    <a href="index.html" class="logo">Dennis Wambua</a>
-</header>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Dennis Wambua</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
 
-<!-- PROJECT DETAILS -->
-<section class="project-details">
+    <!-- Project Details -->
+    <div class="project-details">
 
-    <h1 class="project-title">
-        Forest cover dynamics in Nyeri County(2019-2025)
-        a Land Use and Land Cover based assessment.
-    </h1>
-
-    <p class="project-intro">
-        This project tracks forest cover change in Nyeri County between 2019 and 2025 using ESA WorldCover data in Google Earth Engine. The analysis highlights spatial trends in deforestation and reforestation, revealing notable recovery in key ecological zones such as the Aberdare Ranges and Mt. Kenya slopes.
-    </p>
-
-    <!-- OBJECTIVES -->
-    <div class="project-section">
-        <h2>Objectives</h2>
-        <ul>
-            <li>To assess forest cover distribution in 2019 and 2025</li>
-            <li>To quantify forest loss and gain over time</li>
-            <li>To support sustainable forest management strategies</li>
-        </ul>
-    </div>
-
-    <!-- METHODOLOGY -->
-    <div class="project-section">
-        <h2>Methodology</h2>
-
-        <h3>Data Source</h3>
-        <ul>
-            <li>ESA WorldCover (10m resolution land cover dataset)</li>
-            <li>Accessed via Google Earth Engine (GEE)</li>
-        </ul>
-
-        <h3>Tools Used</h3>
-        <ul>
-            <li>Google Earth Engine – data processing and analysis</li>
-            <li>ArcGIS Pro – visualization and map production</li>
-        </ul>
-
-        <h3>Processing Steps</h3>
-        <ul>
-            <li>Filtered land cover classes to isolate forest cover</li>
-            <li>Clipped dataset to Nyeri County boundary</li>
-            <li>Extracted forest class for both 2019 and 2025</li>
-        </ul>
-
-        <h3>Change Detection</h3>
-        <ul>
-            <li>Compared forest extent between 2019 and 2025</li>
-            <li>Classified changes into loss, stable, and gain</li>
-        </ul>
-    </div>
-
-    <!-- ANALYSIS -->
-    <div class="project-section">
-        <h2>Analysis</h2>
-        <ul>
-            <li>Computed forest area statistics for both years</li>
-            <li>Generated forest change maps</li>
-            <li>Analyzed spatial distribution of forest gain and loss</li>
-            <li>Focused on ecological zones (Aberdare & Mt. Kenya)</li>
-        </ul>
-    </div>
-
-    <!-- RESULTS -->
-    <div class="project-section">
-        <h2>Results & Findings</h2>
-
-        <h3>Forest Change</h3>
-        <ul>
-            <li>Significant forest gain observed in protected areas</li>
-            <li>Localized forest loss in agricultural expansion zones</li>
-        </ul>
-
-        <h3>Spatial Patterns</h3>
-        <ul>
-            <li>Reforestation prominent in Aberdare Ranges</li>
-            <li>Forest recovery observed along Mt. Kenya slopes</li>
-            <li>Stable forest zones within protected reserves</li>
-        </ul>
-    </div>
-
-    <!-- CONCLUSION -->
-    <div class="project-section conclusion">
-        <h2>Conclusion & Recommendations</h2>
-        <p>
-            The analysis demonstrates positive forest recovery trends in Nyeri County, particularly within protected ecosystems. However, pressure from agricultural expansion continues to threaten forest edges. Strengthening conservation policies and promoting community-based forest management will be key to sustaining these gains.
-        </p>
-    </div>
-
-    <!-- MAPS -->
-    <div class="project-section">
-        <h2>Maps & Visual Outputs</h2>
-
-        <div class="project-images">
-            <img src="Images/Nyeri-LULC2015.jpg" alt="Forest Cover 2019">
-            <img src="Images/Nyeri-LULC2025.jpg" alt="Forest Cover 2025">
-            <img src="Images/Nyeri-Change map.jpg" alt="Forest Change Map">
+        <!-- Title -->
+        <h1 class="project-title">FOREST COVER DYNAMICS IN NYERI COUNTY (2019–2025):<br>A LAND USE AND LAND COVER-BASED ASSESSMENT</h1>
+        <!-- Introduction -->
+        <div class="project-section">
+            <h2>Introduction</h2>
+            <p>Forests are vital for climate regulation, biodiversity conservation, and sustainable livelihoods. In Nyeri County, changes in Land Use and Land Cover (LULC) have significantly influenced forest dynamics over time. This study analyzes forest cover change between 2019 and 2025, and projects trends to 2030 using LULC data in Google Earth Engine (GEE). The aim is to assess spatial and temporal forest variations and support data-driven land management and conservation planning.</p>
         </div>
+
+        <!-- Objectives -->
+        <div class="project-section">
+            <h2>Objectives</h2>
+            <ul>
+                <li>To quantify changes in forest area (gain or loss) over time.</li>
+                <li>To assess spatial patterns and drivers of forest cover change.</li>
+                <li>To support data-driven decision-making for sustainable land management.</li>
+            </ul>
+        </div>
+
+        <!-- Study Area -->
+        <div class="project-section">
+            <h2>Study Area</h2>
+            
+            <div class="project-images">
+                <img src="Images/nyeri/study-area-map.jpg" alt="Study Area - Nyeri County">
+            </div>
+            
+            <p><strong>Nyeri County</strong> is located in the Central region of Kenya, known for its rich forest cover including the Aberdare Ranges and Mt. Kenya slopes.</p>
+        </div>
+
+        <!-- Data and Methodology -->
+        <div class="project-section">
+            <h2>Data and Methodology</h2>
+            
+            <p><strong>Data Source:</strong> ESA World Cover datasets (Sentinel-1 & Sentinel-2, 10 m resolution).</p>
+            <p><strong>Years of Analysis:</strong> 2019, 2025, and projected 2030.</p>
+            <p><strong>Preprocessing:</strong> Clipping images to Nyeri AOI and filtering for forest class.</p>
+            
+            <h3>Analysis Steps:</h3>
+            <ol>
+                <li>Extract forest pixels (Class = 10).</li>
+                <li>Calculate forest area (km²) for each year.</li>
+                <li>Predict forest trends for 2030 using linear projection.</li>
+                <li>Visualize spatial distribution and quantify changes using charts.</li>
+            </ol>
+            
+            <h3>Software Used:</h3>
+            <p>Google Earth Engine (JavaScript API), ArcGIS Pro for final visualization.</p>
+        </div>
+
+        <!-- Results and Discussion -->
+        <div class="project-section">
+            <h2>Results and Discussion</h2>
+            
+            <p>Forest cover <strong>increased between 2019 and 2025</strong>, mainly in the <strong>Aberdare Ranges and Mt. Kenya slopes</strong>.</p>
+            <p>Total forest area rose by approximately <strong>15,393.2737 km²</strong>, showing positive reforestation and recovery trends.</p>
+            
+            <div class="project-images">
+                <img src="Images/nyeri/satellite-nyeri.jpg" alt="Satellite Image of Nyeri County">
+                <img src="Images/Nyeri-LULC2015.jpg" alt="Forest Cover 2019">
+            </div>
+        </div>
+
+        <!-- Predicted 2030 Map -->
+        <div class="project-section">
+            <h2>Predicted 2030 Map</h2>
+            
+            <p>The <strong>Predicted 2030 map</strong> suggests continued forest growth under current conservation efforts.</p>
+            <p>Urban centers (Nyeri Town, Karatina) show minimal change, indicating stable land management practices.</p>
+            
+            <div class="project-images">
+                <img src="Images/Nyeri-LULC2025.jpg" alt="Forest Cover 2025">
+                <img src="Images/nyeri/predicted-forest-2030.jpg" alt="Predicted Forest Cover 2030">
+            </div>
+        </div>
+
+        <!-- Interpretation and Conclusion -->
+        <div class="project-section conclusion">
+            <h2>Interpretation and Conclusion</h2>
+            <p>The analysis demonstrates <strong>positive forest cover growth</strong> in Nyeri County over the study period. This trend reflects the success of reforestation initiatives, sustainable land-use practices, and policy interventions.</p>
+            <p>The integration of LULC datasets and GEE cloud computing proved efficient for long-term environmental monitoring and planning.</p>
+            <p>These results emphasize the role of GIS and remote sensing in supporting data-driven forest conservation and climate resilience.</p>
+        </div>
+
+
+        <!-- Back Button -->
+        <div class="back-btn">
+            <a href="index.html#projects">Back</a>
+        </div>
+
     </div>
 
-    <!-- BACK BUTTON -->
-    <div class="back-btn">
-        <a href="index.html#projects">Back</a>
-    </div>
+    <!-- JavaScript for mobile menu -->
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
 
-</section>
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
 
 </body>
 </html>

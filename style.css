@@ -855,3 +855,231 @@ span {
     }
 }
 
+.body {
+    background: #d0d1d4;
+    color: #0c0101;
+}
+
+.project-details {
+    padding: 10rem 9% 5rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+        /* Title */
+.project-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0c0101;
+    text-align: center;
+}
+
+        /* Author info - removed from page 1 as requested */
+.project-author {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #1a4ec7;
+    margin-bottom: 3rem;
+}
+
+.project-intro {
+    font-size: 1.4rem;
+    color: #020101;
+    margin-bottom: 3rem;
+}
+
+        /* Sections */
+.project-section {
+    margin-bottom: 3rem;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1a4ec7;
+    border-bottom: 2px solid #68e1e7;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.project-section h3 {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1a4ec7;
+}
+
+.project-section h4 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #0c0101;
+}
+
+.project-section p {
+    font-size: 1.4rem;
+    color: #020708;
+    margin-bottom: 1rem;
+}
+
+.project-section ul {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-section ul li {
+    font-size: 1.4rem;
+    color: #020708;
+    margin-bottom: 0.5rem;
+}
+
+        /* Images */
+.project-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-images img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+.project-images img:hover {
+    transform: scale(1.02);
+}
+
+        /* Image placeholder for maps */
+.image-placeholder {
+    background: #e8e8e8;
+    border: 2px dashed #1a4ec7;
+    border-radius: 1rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #1a4ec7;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.image-placeholder:hover {
+    background: #d0d1d4;
+}
+
+        /* Conclusion box */
+.conclusion {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    border-left: 4px solid #68e1e7;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+.conclusion h2 {
+    border-bottom: none;
+    display: block;
+}
+
+        /* Back button */
+.back-btn {
+    display: block;
+    width: fit-content;
+    margin: 1rem auto;
+    padding: 1rem 1.4rem;
+    background: #68e1e7;
+    color: #1a4ec7;
+    border-radius: 1.4rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+}
+
+        /* Mobile */
+@media (max-width: 768px) {
+    .project-details {
+        padding: 1rem 1% 1rem;
+    }
+    .project-title {
+        font-size: 2rem;
+    }
+    .project-section h2 {
+        font-size: 1.6rem;
+    }
+    .project-section p, 
+    .project-section ul li {
+        font-size: 1.6rem;
+    }
+    .image-placeholder {
+        padding: rem 1rem;
+        font-size: 1.2rem;
+    }
+    .logo {
+        font-size: 2.5rem;
+        color: var(--text-color);
+        font-weight: 700;
+        align-items: center;
+    }
+    
+    .project-author {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #1a4ec7;
+    margin-bottom: 3rem;
+}
+}
+
+/* ===== NYERI FOREST COVER PROJECT ===== */
+
+/* Author box styling */
+.author-box {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+.author-box h2 {
+    border-bottom: none;
+    display: block;
+    font-size: 1.6rem;
+}
+
+.author-box p {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ordered list styling */
+.project-section ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-section ol li {
+    font-size: 1.5rem;
+    
+    color: #020708;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .author-box h2 {
+        font-size: 1.8rem;
+    }
+    
+    .project-section ol li {
+        font-size: 1.3rem;
+    }
+}
