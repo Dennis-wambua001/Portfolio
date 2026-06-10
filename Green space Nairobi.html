@@ -1,14 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Space Change Analysis | Dennis Wambua</title>
+    <title>Urban Expansion & Green Infrastructure - Nairobi County</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
 
     <!-- Header -->
@@ -25,127 +23,227 @@
         </nav>
     </header>
 
+    <div class="project-details">
 
-<!-- PROJECT DETAILS -->
-<section class="project-details">
+        <!-- Title -->
+        <h1 class="project-title">ASSESSING THE EFFECTS OF URBAN EXPANSION ON GREEN INFRASTRUCTURE IN NAIROBI COUNTY (2015-2025)</h1>
 
-    <h1 class="project-title">
-        Asessing Green Space Change in Nairobi using NDVI.
-                    A comparison between 2015 and 2025.
-    </h1>
+        <!-- Introduction -->
+        <div class="project-section">
+            <p>This study assesses the effects of urban expansion on green infrastructure in Nairobi County between 2015 and 2025 using GIS and remote sensing techniques.</p>
+            <p>Between 2015 and 2025, Nairobi witnessed major infrastructure projects including the Standard Gauge Railway, expansion of the Eastern and Northern Bypasses, and the Nairobi Expressway. Zoning reviews in Upper Hill, Kilimani, and Kileleshwa increased plot ratios from 100% to 200%, accelerating densification.</p>
+            
+            <h3>Key questions addressed:</h3>
+            <ul>
+                <li>How did urban green space change between 2015 and 2025?</li>
+                <li>What are the primary drivers of green space fragmentation?</li>
+                <li>How does green space change affect Land Surface Temperature and the Urban Heat Island effect?</li>
+            </ul>
+            
+            <h3>Data Sources:</h3>
+            <p>Landsat 8 (2015), Sentinel-2 and Landsat 9 (2025), CHIRPS rainfall, ERA5-Land temperature, NASA SRTM 30m elevation, KNBS population data.</p>
+        </div>
 
-    <p class="project-intro">
-        This project focused on analyzing the spatial and temporal changes in green spaces within Nairobi County 
-        between 2015 and 2025 using geospatial techniques. The study aimed to analyze urban environmental sustainability
-         by identifying areas experiencing vegetation loss and expansion.
-    </p>
+        <!-- Objectives -->
+        <div class="project-section">
+            <h2>Objectives</h2>
+            
+            <h3>General Objective</h3>
+            <p>To assess the effects of urban expansion on green infrastructure in Nairobi County between 2015 and 2025 using GIS and remote sensing approaches.</p>
+            
+            <h3>Specific Objectives</h3>
+            <ul>
+                <li>To analyze the spatiotemporal dynamics of urban green space between 2015 and 2025 in Nairobi City County.</li>
+                <li>To determine the drivers of green space fragmentation in Nairobi due to urbanization from 2015 to 2025.</li>
+                <li>To assess the effects of urban green space change on Land Surface Temperature (LST) and the Urban Heat Island (UHI) effect in Nairobi.</li>
+            </ul>
+        </div>
 
-    <!-- OBJECTIVES -->
-    <div class="project-section">
-        <h2>Objectives</h2>
-        <ul>
-            <li>To map green space distribution for 2015 and 2025</li>
-            <li>To detect and quantify vegetation change over time</li>
-            <li>To identify areas with significant green space loss</li>
-            <li>To identify the drivers for green infrustructure loss</li>
-            <li>To support urban planning and environmental conservation</li>
-        </ul>
-    </div>
-
-    <!-- METHODOLOGY -->
-     <div class="project-section">
-        <h2>Methodology</h2>
-
-        <h3>Data Sources</h3>
-        <ul>
-            <li>Sentinel-2 Surface Reflectance (Level-2A), 10m resolution-Copernicus Open Access Hub</li>
-            <li>NASA EarthData </li>
-            <li>Open Streetmap </li>
-        </ul>
-        <!-- TOOLS -->
-    <div class="project-section">
-        <h2>Tools & Technologies</h2>
-        <ul>
-            <li>ArcGIS Pro</li>
-            <li>Google Earth Engine</li>
-            <li>QGIS</li>
-            <li>Remote Sensing Techniques</li>
-        </ul>
-    </div>
-        
-        </ul>
-        <h3>Preprocessing</h3>
-        <ul>
-            <li>Cloud and shadow masking using QA60 band</li>
-            <li>Clipping to Nairobi study area (~696 km²)</li>
-            <li>Resampling all bands to 10m spatial resolution</li>
-        </ul>
-        <h3>Land Cover Classification</h3>
-        <ul>
-            <li>Used Arcgis pro- classified into 6 categories; Built up, Dense Vegetation, Sparse Vegetation,
-                Bareland, Water, Grassland</li>
-            <li>Used Random Forest model</li>
-            <li>Output: LULC 2015, LULC 2025 and LULC Change map</li>
+        <!-- Study Area -->
+        <div class="project-section">
+            <h2>Study Area</h2>
+            
             <div class="project-images">
-            <img src="Images/LULC 2015.jpg" alt="Study Area">
-            <img src="Images/lulc 2025.jpg" alt="Study Area">
-            <img src="Images/LULC and Roads.jpg" alt="Study Area">
+                <img src="Images/study area-nai.jpg" alt="Nairobi County">
+            </div>
+            
+            <p><strong>Nairobi City County</strong> covers approximately 696 km². Population: 4.4 million (2019 census). The city uniquely borders Nairobi National Park, creating both opportunities and challenges for urban-nature coexistence.</p>
         </div>
-        
-        <h3>NDVI Calculation</h3>
-        <p>NDVI = (NIR – Red) / (NIR + Red)</p>
-        <p>NIR = Band 8, Red = Band 4 (Sentinel-2)</p>
-        <p>Produced; NDVI 2015, NDVI 2025 And NDVI change</p>
-        <div class="project-images">
-            <img src="Images/NDVI 2015.jpg" alt="Study Area">
-            <img src="Images/NDVI 2025.jpg" alt="Study Area">
-            <img src="Images/NDVI CHANGE.jpg" alt="Study Area">
+
+        <!-- Methodology -->
+        <div class="project-section">
+            <h2>Methodology</h2>
+            
+            <p>A multi-step GIS and remote sensing workflow integrating satellite imagery, climate data, and weighted overlay analysis.</p>
+            
+            <p><strong>Workflow:</strong> [Data] → [Preprocess] → [LULC] → [NDVI] → [LST Retrieval] → [Driver Analysis] → [UHI Analysis]</p>
+            
+            <h3>Satellite Data Processing</h3>
+            <p>Landsat 8 (2015) and Sentinel-2/Landsat 9 (2025) imagery processed with radiometric calibration, atmospheric correction, and clipping to Nairobi boundary.</p>
         </div>
-        
-        <h3>Population data</h3>
-        <ul>
-            <li>Clipped to the Nairobi boundary to assess how population affects green space loss. </li>
-        </ul>
-    </div>
-    
-    
-    <!-- RESULTS -->
-     <div class="project-section">
-        <h2>Results & Findings</h2>
-        
-        <h3>Quantified Change</h3>
-        <ul>
-            <li>Vegetation loss: ~34 km² (~4.9% of study area)</li>
-            <li>Vegetation gain: ~12 km²</li>
-            <li>Net loss: ~22 km²</li>
-        </ul>
-        
-        <h3>Spatial Patterns</h3>
-        <ul>
-            <li>High loss in urban core and industrial zones (Kariobangi, Industrial Area, Along Kangudo roadR876)</li>
-            <li>Stable zones include Karura Forest, Nairobi National Park, and peri-urban agricultural areas</li>
-        </ul>
-        
-        <h3>NDVI Value Interpretation</h3>
-        <ul>
-            <li>Dense vegetation: 0.6 – 0.8</li>
-            <li>Sparse vegetation: 0.2 – 0.4</li>
-            <li>Built-up/bare surfaces: -0.1 to 0.1</li>
-        </ul>
-    </div>
-    
-    <!-- CONCLUSION -->
-     <div class="project-section conclusion">
-        <h2>Conclusion & Recommendations</h2>
-        <p>
-        The results indicate significant loss of green space driven by rapid urban expansion. Critical areas near economic and residential growth zones are most affected. Without strategic intervention, Nairobi faces increased urban heat island effects, declining air quality, and elevated flood risks due to reduced vegetation cover.
-    </p>
-</div>
 
+        <!-- LULC -->
+        <div class="project-section">
+            <h2>Land Use/Land Cover (LULC)</h2>
+            
+            <p><strong>Method:</strong> Supervised classification (Random Forest)</p>
+            <p><strong>Classes:</strong> Built-up area, Dense vegetation, Sparse vegetation, Bare land, Grassland, Water</p>
+            <p><strong>Outputs:</strong> LULC 2015, LULC 2025, LULC Change map</p>
+            
+            <div class="project-images">
+                <img src="Images/LULC 2015.jpg" alt="LULC 2015">
+                <img src="Images/lulc 2025.jpg" alt="LULC 2025">
+                <img src="Images/LULC and Roads.jpg" alt="LULC Change">
+            </div>
+            
+            <p><strong>Key findings:</strong> Grassland increased by 137.93 km² | Sparse vegetation decreased by 128.07 km² | Net vegetation gain: 8.14 km²</p>
+        </div>
 
-    <!-- BACK BUTTON -->
-    <div class="back-btn">
-        <a href="index.html#projects">Back</a>
+        <!-- NDVI -->
+        <div class="project-section">
+            <h2>NDVI (Vegetation Health)</h2>
+            
+            <p><strong>Formula:</strong> (NIR - Red) / (NIR + Red)</p>
+            <p><strong>Outputs:</strong> NDVI 2015, NDVI 2025, NDVI Change map</p>
+            
+            <div class="project-images">
+                <img src="Images/NDVI 2015.jpg" alt="NDVI 2015">
+                <img src="Images/NDVI 2025.jpg" alt="NDVI 2025">
+                <img src="Images/LULC Change.jpg" alt="NDVI Change">
+            </div>
+            
+            <p><strong>Key finding:</strong> 80.89% of Nairobi County experienced declining vegetation health between 2015 and 2025.</p>
+        </div>
+
+        <!-- Fragmentation Metrics -->
+        <div class="project-section">
+            <h2>Fragmentation Metrics</h2>
+            
+            <div class="project-images">
+                <img src="Images/Nairobi.png" alt="Roads and Green Areas">
+            </div>
+            
+            <p><strong>Mean patch size:</strong> 0.015 ha (≈ 12m × 12m — size of a small garden)</p>
+            <p><strong>Number of patches:</strong> 4.8 million — indicating extreme fragmentation</p>
+            <p><strong>Conclusion:</strong> Most green spaces are highly fragmented into tiny patches, reducing ecological function.</p>
+        </div>
+
+        <!-- Driver Analysis -->
+        <div class="project-section">
+            <h2>Driver Analysis</h2>
+            
+            <div class="project-images">
+                <img src="Images/Population.jpg" alt="Population Density">
+            </div>
+            
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Driver</th>
+                        <th>Coefficient (β)</th>
+                        <th>p-value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Distance to roads</strong></td>
+                        <td>-0.0025</td>
+                        <td>< 0.001</td>
+                    </tr>
+                    <tr>
+                        <td>Distance from CBD</td>
+                        <td>-0.00008</td>
+                        <td>0.003</td>
+                    </tr>
+                    <tr>
+                        <td>Population density</td>
+                        <td>0.00004</td>
+                        <td>0.012</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Pseudo R² = 0.28</strong> — Model explains 28% of vegetation loss variation</p>
+        </div>
+
+        <!-- Land Surface Temperature & UHI -->
+        <div class="project-section">
+            <h2>Land Surface Temperature & UHI</h2>
+            
+            <div class="project-images">
+                <img src="Images/LST-2015.jpg" alt="LST 2015">
+                <img src="Images/LST-2025.jpg" alt="LST 2025">
+            </div>
+            
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Measure</th>
+                        <th>2015</th>
+                        <th>2025</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mean LST (Built-up)</td>
+                        <td>38.87°C</td>
+                        <td>36.56°C</td>
+                        <td>-2.31°C</td>
+                    </tr>
+                    <tr>
+                        <td>Mean LST (Vegetation)</td>
+                        <td>35.29°C</td>
+                        <td>31.74°C</td>
+                        <td>-3.55°C</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UHI Intensity</strong></td>
+                        <td><strong>3.58°C</strong></td>
+                        <td><strong>4.82°C</strong></td>
+                        <td><strong>+1.24°C</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>NDVI-LST Correlation:</strong> r = -0.65 (2015), r = -0.72 (2025) — confirming vegetation's cooling effect.</p>
+        </div>
+
+        <!-- Results -->
+        <div class="project-section">
+            <h2>Results</h2>
+            
+            <h3>Vegetation Paradox</h3>
+            <p>Nairobi <strong>gained</strong> vegetation area (+8.14 km²) but <strong>lost</strong> vegetation quality, with 80.89% of the county experiencing NDVI decline. New grassland in peri-urban areas masked degradation of established forests.</p>
+            
+            <h3>Key Drivers</h3>
+            <p><strong>Roads</strong> were the strongest driver of vegetation loss. Development concentrated along the Eastern Bypass, Southern Bypass, Northern Bypass, Outering Road, and Kangundo Road, where large tracts of land were converted to gated communities, shopping centers, and warehousing.</p>
+            
+            <h3>Urban Heat Island</h3>
+            <p>UHI intensity increased from <strong>3.58°C to 4.82°C</strong>, a widening of 1.24°C. Vegetated areas cooled more than built-up areas, increasing the temperature gap.</p>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="project-section">
+            <h2>Recommendations</h2>
+            
+            <ul>
+                <li><strong>Enforce green space regulations:</strong> Require minimum 15% vegetation cover in all new developments, especially in Upper Hill, Kilimani, and Kileleshwa.</li>
+                <li><strong>Implement greening programs along roads:</strong> Plant trees along Eastern Bypass, Southern Bypass, Northern Bypass, Outering Road, and Kangundo Road.</li>
+                <li><strong>Protect the Athi River riparian corridor:</strong> Declare as a protected zone with a minimum 30m buffer from the river.</li>
+                <li><strong>Establish remote sensing monitoring:</strong> Deploy a 6-month satellite monitoring system using Sentinel-2 to detect new bare land expansion early.</li>
+            </ul>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="project-section conclusion">
+            <h2>Conclusion</h2>
+            <p>This study assessed urban expansion effects on green infrastructure in Nairobi County (2015-2025) using remote sensing, GIS, and driver analysis. While Nairobi gained vegetation area (+8.14 km²), 80.89% of the county experienced NDVI decline. Roads and densification policies were the primary drivers of vegetation loss. UHI intensity increased from 3.58°C to 4.82°C as cooling vegetation diminished. This hotspot map provides a spatial decision-support system for targeted interventions.</p>
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn">
+            <a href="index.html#projects">← Back to Projects</a>
+        </div>
+
     </div>
 
     <!-- JavaScript for mobile menu -->
@@ -158,8 +256,6 @@
             navbar.classList.toggle('active');
         };
     </script>
-
-</section>
 
 </body>
 </html>
