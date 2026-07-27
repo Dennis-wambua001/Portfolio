@@ -4,443 +4,1226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dennis Wambua | Portfolio</title>
-    <meta name="description" content="Dennis Wambua's personal portfolio showcasing web development projects, skills, and experience.">
+    <title>Dennis Wambua | GIS & Earth Observation Specialist</title>
+    <link rel="icon" href="Images/home image.png">
+    <meta name="description" content="Dennis Wambua's portfolio showcasing GIS, Remote Sensing, Earth Observation, and spatial analytics projects.">
 
-    <meta name="keywords" content="Dennis Wambua, web developer, software developer, portfolio, frontend developer">
-
-    <meta name="author" content="Dennis Wambua">
-
-
-    <!-- Box Icons -->
+    <!-- BoxIcons CDN -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* RESET & CSS VARIABLES */
+        :root {
+          --bg-dark: #e3e8ec;
+          --bg-card: #151d28;
+          --bg-box: #1c2636;
+          --accent-green: #0dd406;
+          --accent-blue: #818cf8;  
+          --text-main: #0e0f0f;
+          --text-muted: #0a0c0f;
+          --border-color: #263345;
+          --font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 68, 216, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 0.8rem 7%;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .logo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-green);
+        }
+
+        .menu-icon {
+            font-size: 2rem;
+            color: rgba(10, 10, 10, 0.95);
+            cursor: pointer;
+            display: none;
+        }
+
+        .navbar {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .navbar a {
+            color: rgba(10, 10, 10, 0.95);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--accent-green);
+        }
+
+        /* SECTION LAYOUTS */
+        section {
+            padding: 3.5rem 7%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .heading {
+            font-size: 2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+            text-align: center; 
+        }
+
+        .heading span {
+            color: var(--accent-green);
+        }
+
+        .section-intro {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.98rem;
+            text-align: center;
+        }
+
+        /* HERO / HOME SECTION */
+        .home {
+            padding-top: 6.5rem;
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2.5rem;
+        }
+
+        .home-content {
+            max-width: 620px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color:   #3c0bec;
+            padding: 0.5rem 1.1rem;
+            border-radius: 20px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .home-content h1 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .home-content p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .home-btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background-color: #059669;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border-color);
+            color:  #e4d3d3;
+            background: #20262e;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .home-img {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent-green);
+            box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+        }
+
+        /* STATS COUNTER BAR */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            background-color: #686968f5;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+        }
+
+        .stat-item h3 {
+            font-size: 1.4rem;
+            color: var(--accent-green);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.3;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .about-img {
+            width: 280px;
+            height: 280px;
+            flex-shrink: 0;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+        }
+
+        .about-content {
+            flex-grow: 1;
+        }
+
+        .about-content h3 {
+            color:  #3c0bec;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-size: 0.98rem;
+        }
+
+        /* TECHNICAL TOOLKIT (SKILLS) */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.1rem;
+        }
+
+        .skill-box {
+            background: rgba(126, 144, 172, 0.95);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: border-color 0.3s ease;
+        }
+
+        .skill-box:hover {
+            border-color: var(--accent-green);
+        }
+
+        .skill-box i {
+            font-size: 2rem;
+            color: var(--accent-green);
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-box h3 {
+            font-size: 1.15rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.2rem;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box ul li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .skill-box ul li::before {
+            content: "▹";
+            color: var(--accent-green);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* PROJECTS GRID */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background:   #aca8b6;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-green);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 190px;
+            overflow: hidden;
+            background-color: var(--bg-box);
+            position: relative;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-content {
+            padding: 1.4rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+        }
+
+        .project-tags span {
+            background:   #efeef1;
+            color:   #3705ee;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .project-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.35;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-link {
+            margin-top: auto;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.9rem;
+            color:   #3705ee;
+        }
+
+        /* TARGET SECTORS / SERVICES COVERAGE */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-box {
+            background:  rgba(126, 144, 172, 0.95);
+            border: 1px solid var(--border-color);
+            padding: 1.6rem;
+            border-radius: 10px;
+        }
+
+        .service-box i {
+            font-size: 2.2rem;
+            color: var(--accent-green);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-main);
+        }
+
+        .service-box p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* TIMELINE (EXPERIENCE & EDUCATION) */
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+            color:  #3705ee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-box {
+            position: relative;
+            padding-left: 1.4rem;
+            border-left: 2px solid var(--border-color);
+            margin-bottom: 1.8rem;
+        }
+
+        .timeline-box::before {
+            content: '';
+            position: absolute;
+            left: -0.42rem;
+            top: 0.2rem;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent-green);
+        }
+
+        .timeline-date {
+            font-size: 0.82rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.2rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .timeline-box h3 {
+            font-size: 1.05rem;
+        }
+
+        .timeline-box h4 {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-box ul {
+            padding-left: 1.1rem;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 240px;
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color:  #3705ee;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #222324;
+            border-top: 1px solid var(--border-color);
+            padding: 1.5rem 7%;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
+            background: #2f2f30;
+        }
+
+        .footer span {
+            color: var(--accent-green);
+        }
+
+        /* RESPONSIVE STYLES */
+        @media (max-width: 992px) {
+            .home {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 6rem;
+            }
+
+            .home-btn-group {
+                justify-content: center;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-img {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                background: rgba(106, 139, 223, 0.98);
+                border-bottom: 1px solid var(--border-color);
+                flex-direction: column;
+                gap: 1.2rem;
+                display: none;
+            }
+
+            .navbar.active {
+                display: flex;
+            }
+
+            .home-img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .home-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="#" class="logo">Dennis Wambua</a>
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <img src="Images/Dw.png" alt="Dennis Wambua">
+                <span>Dennis Wambua</span>
+            </a>
 
-        <i class="bx bx-menu" id="menu-icon"></i>
+            <i class="bx bx-menu menu-icon" id="menu-icon"></i>
 
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+            <ul class="navbar" id="navbar">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#services">Coverage</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Home Section -->
+    <!-- HOME / HERO SECTION -->
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Geospatial Researcher</h1>
-            <h1>Data Analyst</h1>
-            <h1>Environmentalist</h1>
-            <h3>GIS • Remote Sensing • Spatial Data</h3>
-
+            <span class="role-badge">GIS & Remote Sensing Specialist</span>
+            <h1>Transforming Earth Data into Spatial Intelligence</h1>
             <p>
-                Leveraging geospatial technologies to deliver data-driven insights that address real-world challenges 
-                and support informed decision-making across diverse sectors.
+                I leverage satellite imagery, geospatial analysis and Earth Observation technologies to
+                 develop decision-ready solutions for environmental monitoring, climate resilience, land management, infrastructure planning and sustainable development.
             </p>
 
-            <head>
-                <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-            </head>
-            <div class="social-media">
-                <a href="https://www.linkedin.com/in/dennis-wambua-5834b1362/">
-                    <i class="bx bxl-linkedin"></i>
-                </a>
+            <div class="home-btn-group">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="CV.html" class="btn btn-secondary">Download CV</a>
             </div>
 
-            <a href="CV.html" class="btn">Download CV</a>
+            <!-- STATS COUNTER -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Independent GIS & Remote Sensing Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2+</h3>
+                    <p>International Research Consulting Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4+</h3>
+                    <p>Professional GIS Platforms</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Earth Observation Datasets Utilize</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Commitment to Quality & Timely Delivery</p>
+                </div>
+            </div>
         </div>
 
         <div class="home-img">
-            <img src="Images/home image.png" alt="Profile Image">
+            <img src="Images/home image.png" alt="Dennis Wambua">
         </div>
     </section>
 
-    <!--about section design-->
+    <!-- ABOUT SECTION -->
     <section class="about" id="about">
         <div class="about-img">
-            <img src="Images\Dw.png" alt="">
+            <img src="Images/Dw.png" alt="Dennis Wambua Profile">
         </div>
 
         <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Geospatial Analyst</h3>
-            <p>I am a GIS and Remote Sensing Analyst with experience in spatial data analysis, mapping, and geospatial problem-solving.
-                I have worked on projects including land use change, vegetation monitoring, flood risk mapping, and spatial suitability
-                analysis using ArcGIS, QGIS, and Google Earth Engine. My practical experience spans academic projects and professional work at Ramani, 
-                where I contributed to mapping and spatial data workflows. I am passionate about leveraging geospatial technologies
-                to generate actionable insights that support informed decision-making across diverse sectors.</p>
-            <a href="javascript:void(0)" class="btn" onclick="toggleReadMore()">
-                Read More
-
-            </a>
+            <h2 class="heading" style="text-align: left;">About <span>Dennis Wambua</span></h2>
+            <h3>Transforming Spatial Data into Actionable Intelligence</h3>
+            <p>
+                I am a GIS & Remote Sensing Analyst dedicated to transforming spatial data into actionable intelligence. 
+                Through advanced spatial analysis, satellite image processing and innovative mapping solutions, I deliver geospatial solutions that support environmental management, climate resilience, infrastructure planning and sustainable development.
+            </p>
+            <p>
+                Committed to precision, quality, and timely delivery, I develop reliable geospatial solutions that empower informed decision-making.
+            </p>
         </div>
     </section>
 
-    <!-- 🔥 READ MORE / SKILLS SECTION (HIDDEN FIRST) -->
-     
-    <section class="read-more-content" id="readMore">
-        <h2 class="heading">My Skills & Expertise</h2>
+    <!-- EXPANDED TECHNICAL TOOLKIT & SKILLS -->
+    <section id="skills">
+        <h2 class="heading">Technical <span>Capabilities</span></h2>
+        <p class="section-intro">A comprehensive geospatial technology stack supporting GIS, Remote Sensing, spatial analytics, automation and decision-support solutions.</p>
+
         <div class="skills-container">
+
+            <!-- SKILL BOX 1: PYTHON & AUTOMATION -->
             <div class="skill-box">
-                <h3>🛰️ Remote Sensing</h3>
-                <ul>
-                    <li>Satellite image analysis (e.g., Sentinel-2, Landsat)</li>
-                    <li>Image preprocessing (cloud masking, clipping, resampling, mosaicking)</li>
-                    <li>Time-series analysis for environmental monitoring</li>
-                    <li>Change detection techniques (land cover, vegetation, water bodies)</li>
-                    <li>Spectral index computation (NDVI, NDWI, EVI, etc.)</li>
-                </ul>
-            </div>
-            
-            <!-- GIS & Spatial Data -->
-             <div class="skill-box">
-                <h3>🗺️ GIS & Spatial Data Processing</h3>
-                <ul>
-                    <li>Raster and vector data processing and integration</li>
-                    <li>Spatial data cleaning, validation, and quality assurance</li>
-                    <li>Zonal statistics and geospatial extraction</li>
-                    <li>Suitability analysis and spatial modeling</li>
-                    <li>Land use / land cover (LULC) mapping and change detection</li>
-                    <li>Geodatabase management and geoprocessing workflows</li>
-                </ul>
-            </div>
-            
-            <!-- Visualization -->
-             <div class="skill-box">
-                <h3>📊 Geospatial Data Visualization & Dashboards</h3>
-                <ul>
-                    <li>Thematic mapping and cartographic design</li>
-                    <li>Interactive dashboard development (ESRI Dashboards, Power BI, Tableau)</li>
-                    <li>Data-driven visualization for decision support</li>
-                    <li>Spatial data presentation for technical and non-technical audiences</li>
-                </ul>
-            </div>
-            <!-- Tools -->
-             <div class="skill-box">
-                <h3>🗺️ GIS Software & Tools</h3>
+                <i class=></i>
+                <h3>GIS Platforms</h3>
                 <ul>
                     <li>ArcGIS Pro</li>
+                    <li>ArcMap</li>
                     <li>QGIS</li>
-                    <LI>ArcMap</LI>
-                    <li>Google Earth Engine (GEE)</li>
-                    <li>Global Mapper</li>
-                    <li>ESRI Dashboards</li>
-                    <LI>MS Office, Excel (spatial add‑ins), Google Workspace</LI>
+                    <li>Google Earth Engine</li>
+                    <li>Google Earth Pro</li>
                 </ul>
             </div>
-            
-            <!-- Applications -->
-             <div class="skill-box">
-                <h3>🌍 Application Areas</h3>
+
+            <!-- SKILL BOX 2: SQL & SPATIAL DATABASES -->
+            <div class="skill-box">
+                <i class></i>
+                <h3>Remote Sensing & Earth Observation</h3>
                 <ul>
-                    <li>Urban planning</li>
-                    <li>Environmental monitoring & Impact Assesment</li>
-                    <li>Agricultural analysis </li>
-                    <li>Climate analysis & drought monitoring</li>
-                    <li>Renewable energy & resource planning</li>
+                    <li>Landsat Collection</li>
+                    <li>Google Earth Engine</li>
+                    <li>Sentinel-1</li>
+                    <li>Sentinel-2</li>
+                    <li>ESA WorldCover</li>
+                    <li>MODIS</li>
                 </ul>
             </div>
-            
-            <!-- Professional -->
-             <div class="skill-box">
-                <h3>🤝 Professional & Analytical Skills</h3>
+
+            <!-- SKILL BOX 3: WEB MAPPING & DASHBOARDS -->
+            <div class="skill-box">
+                <i class=></i>
+                <h3>Programming & Development</h3>
                 <ul>
-                    <li>Problem-solving using geospatial data and evidence-based reasoning</li>
-                    <li>Project coordination and geospatial workflow support</li>
-                    <li>Team collaboration and cross-disciplinary communication</li>
-                    <li>Translating spatial insights into actionable recommendations</li>
-                    <li>Data accuracy assurance and metadata documentation</li>
-                    
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>SQL</li>
                 </ul>
+            </div>
+
+            <!-- SKILL BOX 3: WEB MAPPING & DASHBOARDS -->
+            <div class="skill-box">
+                <i class=></i>
+                <h3>Geospatial Libraries</h3>
+                <ul>
+                    <li>GeoPandas</li>
+                    <li>Rasterio</li>
+                    <li>GDAL</li>
+                    <li>Shapely</li>
+                    <li>ArcPy</li>
+                    <li>Geemap</li>
+                </ul>
+            </div>
+
+            <!-- SKILL BOX 3: WEB MAPPING & DASHBOARDS -->
+            <div class="skill-box">
+                <i class></i>
+                <h3>Spatial Databases</h3>
+                <ul>
+                    <li>PostgreSQL</li>
+                    <li>PostGIS</li>
+                    <li>SQLite</li>
+                    <li>File Geodatabases</li>
+                </ul>
+            </div>
+
+            <!-- SKILL BOX 3: WEB MAPPING & DASHBOARDS -->
+            <div class="skill-box">
+                <i class=></i>
+                <h3>Web GIS & Data Visualization</h3>
+                <ul>
+                    <li>ArcGIS Dashboards</li>
+                    <li>Streamlit</li>
+                    <li>Leaflet</li>
+                    <li>Folium</li>
+                    <li>Plotly</li>
+                </ul>
+            </div>
+
+            <!-- SKILL BOX 4: GIS & REMOTE SENSING -->
+            <div class="skill-box">
+                <i class></i>
+                <h3>Spatial Analysis & Cartography</h3>
+                <ul>
+                    <li>Spatial Analysis</li>
+                    <li>Cartographic Design</li>
+                    <li>Land Use/Land Cover Classification</li>
+                    <li>Change Detection</li>
+                    <li>Terrain Analysis</li>
+                    <li>Hydrological Analysis</li>
+                    <li>Suitability Modelling</li>
+                    <li>Network Analysis</li>
+                    <li>Spatial Statistics</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section id="projects">
+        <h2 class="heading">Featured <span>Geospatial Projects</span></h2>
+        <p class="section-intro">Explore satellite-based change detection, climate monitoring, and land degradation assessments.</p>
+
+        <div class="projects-container">
+
+            <!-- PROJECT 1 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/NDVI Nairobi.png" alt="Nairobi Green Space">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>NDVI</span>
+                        <span>GEE</span>
+                        <span>ArcGIS</span>
+                    </div>
+                    <h3>Assessing Green Space Change in Nairobi (2020–2025)</h3>
+                    <p>Evaluated urban canopy dynamics and identified underserved zones in Nairobi County to support sustainable urban planning.</p>
+                    <a href="Green space Nairobi.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/Nyeri forest.jpg" alt="Nyeri Forest Cover">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>LULC</span>
+                        <span>Sentinel-2</span>
+                        <span>QGIS</span>
+                    </div>
+                    <h3>Forest Cover Dynamics in Nyeri County (2019–2025)</h3>
+                    <p>Multi-temporal satellite monitoring of forest cover changes, mapping deforestation trends and supporting regional conservation.</p>
+                    <a href="Nyeri forest dynamics.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/rice growth.jpeg" alt="Mwea Crop Health">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>AgTech</span>
+                        <span>Sentinel-2</span>
+                        <span>GEE</span>
+                    </div>
+                    <h3>Rice Crop Health Monitoring — Mwea Scheme (2025)</h3>
+                    <p>Conducted NDVI-based multi-temporal satellite analysis to monitor crop health and yield trends in major irrigation zones.</p>
+                    <a href="Crop health.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/turkana dashboard.png" alt="Turkana Climate Dashboard">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>CHIRPS</span>
+                        <span>ERA5</span>
+                        <span>ArcGIS Dashboards</span>
+                    </div>
+                    <h3>Spatiotemporal Dynamics of Key Climatic Variables in Turkana</h3>
+                    <p>Assessed climate metrics (rainfall, temperature, radiation) to construct a spatial dashboard supporting water management.</p>
+                    <a href="Turkana dashboard.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/1.png" alt="Land Degradation Mavoko">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Land Degradation</span>
+                        <span>Climate Stress</span>
+                        <span>ArcGIS Pro</span>
+                    </div>
+                    <h3>Spatio-Temporal Assessment of Degradation in Mavoko (2016–2026)</h3>
+                    <p>Hotspot assessment of climate stress and land degradation in Mavoko Sub-County to guide sustainable land management.</p>
+                    <a href="land degradation.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/Layout1.jpg" alt="Africa's Great Green Wall">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Remote Sensing</span>
+                        <span>NDVI</span>
+                        <span>Google Earth Engine</span>
+                        <span>ArcGIS Pro</span>
+                    </div>
+                    <h3>Is the Africa's Great Green Wall Really Becoming Greener?</h3>
+                    <p>Evaluated vegetation recovery across Africa's Great Green Wall initiative using multi-temporal satellite imagery to assess long-term ecosystem restoration and environmental change.</p>
+                    <a href="Green wall.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/Screenshot 2026-07-21 132233.png" alt="Mombasa Road Accident Intelligence">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>QGIS</span>
+                        <span>Web Map</span>
+                        <span>Python Dashboards</span>
+                    </div>
+                    <h3>A109 Road Traffic Accident Dashboard</h3>
+                    <p>Developed an interactive dashboard visualizing road traffic accident patterns along the A109 corridor to support hotspot identification, trend analysis and road safety decision-making.</p>
+                    <a href="Mombasa road.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/Screenshot 2026-07-21 182639.png" alt="Nairobi Flood Risk Dashboard-In Development">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Google Earth Engine</span>
+                        <span>Leaflet</span>
+                        <span>Web GIS</span>
+                    </div>
+                    <h3>Nairobi Flood Risk Dashboard</h3>
+                    <p>Building an interactive Web GIS platform for flood risk visualization, infrastructure exposure analysis and disaster preparedness within Nairobi County.</p>
+                    <a href="Nairobi floods.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+            <!-- PROJECT 8 -->
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="Images/Turkana Climate.png" alt="GeoClimate Intelligence Platform-In Development">
+                </div>
+                <div class="project-content">
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Google Earth Engine</span>
+                        <span>PostGIS</span>
+                        <span>Machine Learning</span>
+                        <span>Web GIS</span>
+                    </div>
+                    <h3>AI-Powered Environmental Risk Monitoring System for Kenya</h3>
+                    <p>Developing an end-to-end geospatial decision support platform integrating satellite imagery, climate data, machine learning, spatial databases, and interactive dashboards for nationwide environmental monitoring.</p>
+                    <a href="Geoclimate.html" class="project-link">View Full Project <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTORS & CONSULTING COVERAGE -->
+    <section id="services">
+        <h2 class="heading">Industries <span>I Serve</span></h2>
+        <p class="section-intro">Tailored spatial data analysis and research support for diverse sectors and institutions.</p>
+
+        <div class="services-container">
+            <div class="service-box">
+                <i class></i>
+                <h3>🎓 Academic Research (MSc & PhD)</h3>
+                <p>Supporting postgraduate researchers with GIS and Remote Sensing analysis, satellite image processing, spatial modelling, methodology development, publication-quality cartography, statistical analysis and technical reporting for high-quality research outputs.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🌍 Environmental & Climate Projects</h3>
+                <p>Delivering geospatial solutions for environmental monitoring, climate change assessment, ecosystem conservation, land degradation analysis, vegetation monitoring, Environmental Impact Assessments (EIA), carbon mapping and climate resilience planning.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🏗 Infrastructure & Urban Development</h3>
+                <p>Providing spatial analysis for infrastructure planning, urban growth monitoring, transportation networks, utility mapping, site suitability analysis, corridor planning and sustainable urban development.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>📐 Surveying, Cadastre & Land Administration</h3>
+                <p>Supporting cadastral mapping, parcel mapping, boundary verification, land administration systems, georeferencing, topographic mapping, spatial data management and land information solutions.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>💧 Water Resources & Hydrology</h3>
+                <p>Developing GIS solutions for groundwater potential mapping, watershed delineation, flood susceptibility assessment, surface water monitoring, drought analysis, hydrological modelling and sustainable water resource management.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🌾 Agriculture & Food Security</h3>
+                <p>Applying Remote Sensing and GIS to crop health monitoring, precision agriculture, irrigation assessment, agricultural suitability analysis, land capability evaluation, yield monitoring and food security planning.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🌳 Forestry & Natural Resource Management</h3>
+                <p>Supporting forest cover monitoring, deforestation assessment, biodiversity conservation, habitat mapping, ecosystem restoration, protected area management and natural resource planning using Earth Observation technologies.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>⚠ Disaster Risk Reduction & Emergency Management</h3>
+                <p>Developing hazard and vulnerability assessments for floods, droughts, landslides, and environmental disasters through spatial modelling, risk mapping, exposure analysi and decision-support systems.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>⚡ Energy & Mining</h3>
+                <p>Providing geospatial analysis for renewable energy site selection, transmission corridor planning, mineral exploration support, environmental compliance monitoring and mining impact assessment.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🛰 Remote Sensing & Earth Observation</h3>
+                <p>Processing and analysing satellite imagery for land use and land cover classification, change detection, vegetation indices (NDVI, EVI, SAVI), environmental monitoring, multi-temporal analysis and machine learning-based image classification.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🌐 Web GIS, Spatial Databases & Automation</h3>
+                <p>Designing interactive Web GIS applications, GIS dashboards, enterprise spatial databases, automated geospatial workflows using Python and custom decision-support platforms for efficient spatial data management.</p>
+            </div>
+
+            <div class="service-box">
+                <i class></i>
+                <h3>🏢 Private Sector & Business Intelligence</h3>
+                <p>Helping businesses leverage location intelligence through market analysis, customer catchment modelling, site selection, logistics optimization, asset management, spatial analytics and custom GIS solutions that improve operational and strategic decision-making.</p>
             </div>
         </div>
     </section>
 
-    <!--education design-->
-    <section class="education" id="education">
+    <!-- EXPERIENCE & EDUCATION -->
+    <section id="experience">
+        <h2 class="heading">Experience & <span>Education</span></h2>
+        <p class="section-intro">My background across industry mapping roles, academic studies, and certifications.</p>
 
-    <h2 class="heading">Education & <span>Certifications</span></h2>
+        <div class="timeline-container">
+            <!-- WORK EXPERIENCE -->
+            <div>
+                <h3 class="timeline-title"><i class="bx bx-briefcase"></i> Work History</h3>
 
-    <div class="education-container">
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>GIS & Remote Sensing Consultant</h3>
+                    <h4>Groundwater Potential Mapping Project – Lake Bosomtwe Biosphere Reserve, Ghana</h4>
+                    <ul>
+                        <li>Developed a groundwater potential mapping model by integrating satellite imagery, terrain analysis and multi-criteria spatial analysis for postgraduate research.</li>
+                        <li>Performed remote sensing analysis in Google Earth Engine and produced suitability maps and cartographic outputs in ArcGIS Pro.</li>
+                        <li>Delivered geospatial products to support groundwater resource assessment and environmental planning.</li>
+                        <li>Technologies: Excel, QGIS, ArcGIS Pro</li>
+                    </ul>
+                </div>
 
-        <!-- University -->
-        <div class="education-box">
-            <h3>BSc Geography (GIS & Remote Sensing)</h3>
-            <p><strong>Karatina University</strong></p>
-            <p>2022 – Present</p>
-            <p>
-                Specialized in geospatial analysis, remote sensing, and environmental resource management.
-                Gained skills in GIS applications, spatial data analysis, and mapping techniques.
-            </p>
-        </div>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>GIS & Remote Sensing Consultant</h3>
+                    <h4>Aquaculture Spatial Analysis Project – Nyeri County, Kenya</h4>
+                    <ul>
+                        <li>Conducted spatial analysis of fish farmers' distribution and fish production patterns to support postgraduate research.</li>
+                        <li>Performed spatial data processing, density analysis, and professional cartographic map production using Excel, QGIS and ArcGIS Pro.</li>
+                        <li>Delivered analytical maps and geospatial outputs to support research findings and spatial decision-making.</li>
+                        <li>Technologies: Excel, QGIS, ArcGIS Pro</li>
+                    </ul>
+                </div>
 
-        <!-- ESRI Certification -->
-        <div class="education-box">
-            <h3>Cartography MOOC</h3>
-            <p><strong>ESRI</strong></p>
-            <p>August – October 2025</p>
-            <p>
-                Learned advanced cartographic design principles, map visualization techniques,
-                and effective communication of spatial information.
-            </p>
-        </div>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>Mapping Assistant Technician & Assistant Team Leader</h3>
+                    <h4>Ramani</h4>
+                    <ul>
+                        <li>Led and coordinated mapping activities as Assistant Team Leader.</li>
+                        <li>Worked on multiple GIS, remote sensing, and spatial database workflows.</li>
+                        <li>Utilized ArcGIS Pro, QGIS, Global Mapper.</li>
+                    </ul>
+                </div>
 
-        <!-- FAO Climate -->
-        <div class="education-box">
-            <h3>Climate Change Negotiations for Agriculture Stakeholders</h3>
-            <p><strong>FAO</strong></p>
-            <p>November – December 2025</p>
-            <p>
-                Explored climate policy, agricultural sustainability, and negotiation frameworks
-                for addressing climate-related challenges.
-            </p>
-        </div>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>GIS Attachment</h3>
+                    <h4>Ramani</h4>
+                    <ul>
+                        <li>Delivered advanced mapping and spatial analysis tasks independently.</li>
+                        <li>Performed data cleaning, validation, and layout preparation.</li>
+                    </ul>
+                </div>
 
-        <!-- FAO Forestry -->
-        <div class="education-box">
-            <h3>Introduction to Urban & Peri-Urban Forestry</h3>
-            <p><strong>FAO</strong></p>
-            <p>January – February 2026</p>
-            <p>
-                Covered urban forestry concepts, ecosystem services, and the role of green infrastructure
-                in sustainable urban development.
-            </p>
-        </div>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>GIS & Mapping Intern / Analyst</h3>
+                    <h4>Ramani</h4>
+                    <ul>
+                        <li>Gained foundational skills in spatial data collection, processing, and mapping.</li>
+                    </ul>
+                </div>
+            </div>
 
-    </div>
+            <!-- EDUCATION & CERTIFICATIONS -->
+            <div>
+                <h3 class="timeline-title"><i class="bx bx-book-open"></i> Education & Certifications</h3>
 
-</section>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>BSc Geography (GIS & Remote Sensing Option)</h3>
+                    <h4>Karatina University</h4>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Specialized in geospatial analysis, remote sensing, environmental modeling, and spatial data systems.</p>
+                </div>
 
-<!--project design-->
-<section class="projects" id="projects">
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>Cartography MOOC Certification</h3>
+                    <h4>ESRI</h4>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Advanced cartographic layout design, visual hierarchy, color theory, and spatial storytelling.</p>
+                </div>
 
-    <h2 class="heading">My <span>Projects</span></h2>
-
-    <div class="projects-container">
-
-        <!-- Project 1 -->
-        <div class="project-box">
-            <img src="Images\NDVI Nairobi.png" alt="Green Space Project">
-
-            <div class="project-layer">
-                <h4>Asessing Green Space Change in Nairobi using NDVI.
-                    A comparison between 2020 and 2025.</h4>
-                <p>
-                    Analyzed the distribution and change of green spaces in Nairobi (2020-2025),
-                    identifying underserved areas to support urban planning decisions.
-                </p>
-                <p><strong>Tools:</strong> ArcGIS, Google Earth Egine</p>
-
-                <a href="Green space Nairobi.html" class="project-btn">View Full Project</a>
-                </a>
+                <div class="timeline-box">
+                    <span class="timeline-date"></span>
+                    <h3>Climate Change Negotiations for Agriculture Stakeholders</h3>
+                    <h4>FAO</h4>
+                    <p style="color: var(--text-muted); font-size: 0.88rem;">Policy frameworks, climate adaptation strategies, and agricultural sustainability metrics.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Project 2 -->
-        <div class="project-box">
-            <img src="Images\Nyeri forest.jpg" alt="Forest Dynamics">
+    <!-- CONTACT / FOOTER -->
+     <footer id="contact" style="background: var(--bg-dark); padding: 0.1rem 3% 1rem; ">
+      <h2 class="heading">Let's <span>Work Together</span></h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 0.98rem;">
+        Available for GIS consulting, remote sensing analysis, cartographic project delivery and geospatial research collaborations.
+      </p>
+      
+      <!-- DIRECT ICON & TEXT LINKS -->
+       <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem;">
+        
+        <!-- EMAIL -->
+         <a href="mailto:dwambua375@gmail.com" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 1rem; color: var(--text-main);">
+          <i class="bx bx-envelope" style="font-size: 1.5rem; color:  #0b0b0c;"></i>
+          <span>dwambua375@gmail.com</span>
+        </a>
+        
+        <!-- PHONE -->
+         <a href="tel:+254711891643" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 1rem; color: var(--text-main);">
+          <i class="bx bx-phone" style="font-size: 1.5rem; color:  #05ee18;;"></i>
+          <span>+254 711 891 643</span>
+        </a>
+        
+        <!-- LINKEDIN -->
+         <a href="https://www.linkedin.com/in/dennis-wambua-5834b1362/" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 500; font-size: 1rem; color: var(--text-main);">
+          <i class="bx bxl-linkedin" style="font-size: 1.5rem; color:  #3705ee;"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+      
+      <!-- COPYRIGHT NOTICE -->
+       <div style="border-top: 1px solid var(--border-color); left: 0; width: 100%; right: 0; background: #6b6b72; padding-top: 1.5rem; border-top: 1px solid var(--border-color); text-align: center;">
+        <p style="color:  #0b0b0c; font-size: 0.88rem; margin-bottom: 0.3rem;">Transforming Spatial Data into Actionable Insights for Sustainable Development.</p>
+        <p style="color:  #080808; font-size: 0.85rem;">&copy; 2026 <strong style="color: var(--accent-green);">Dennis Wambua</strong> - GIS & Remote Sensing Analyst.</p>
+      </div>
+    </footer>
+  </body>
+  </html>
 
-            <div class="project-layer">
-                <h4>Forest cover dynamics in Nyeri County(2019-2025)
-                    a Land Use and Land Cover based assessment.</h4>
-                <p>
-                    Assessed forest cover changes using satellite imagery to identify
-                    deforestation trends and support environmental management.
-                </p>
-                <p><strong>Tools:</strong> Google Earth Engine, ArcGIS</p>
-
-                <a href="Nyeri forest dynamics.html" class="project-btn">
-                    View Full Project
-                </a>
-            </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-box">
-            <img src="Images\rice growth.jpeg" alt="Crop Health">
-
-            <div class="project-layer">
-                <h4>Multi-Temporal Analysis of Rice Crop Health in Mwea Irrigation Scheme 
-                    using Sentinel-2(2025)</h4>
-                <p>
-                    Conducted NDVI-based analysis to monitor crop health and support
-                    data-driven agricultural decision-making.
-                </p>
-                <p><strong>Tools:</strong> Google Earth Engine, QGIS</p>
-
-                <a href="Crop health.html" class="project-btn">
-                    View Full Project
-                </a>
-            </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-box">
-            <img src="Images\turkana dashboard.png" alt="Crop Health">
-
-            <div class="project-layer">
-                <h4>Spatiotemporal Dynamics of Key Climatic Variables in Turkana County:</h4>
-                <p>
-                    Assessed 2025 climate patterns in Turkana County—
-                    rainfall, humidity, temperature, wind speed, and solar energy, radiation,sunshine 
-                    to guide water and energy.
-
-
-                </p>
-                <p><strong>Tools:</strong> Google Earth Engine, ArcGIS pro, ArcGIS online, ArcGIS Dashboard</p>
-
-                <a href="Turkana dashboard.html" class="project-btn">
-                    View Full Project
-                </a>
-            </div>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-box">
-            <img src="Images/1.png" alt="Crop Health">
-
-            <div class="project-layer">
-                <h4>SPATIO-TEMPORAL ASSESSMENT OF LAND DEGRADATION AND CLIMATE STRESS 
-                IN MAVOKO SUBCOUNTY, MACHAKOS COUNTY(2016–2026)</h4>
-                <p>
-                    Land Degradation & Climate Stress Hotspots Assessment in Mavoko Sub-County (2016–2026)
-                </p>
-                <p><strong>Tools:</strong> ArcGIS Pro, ArcMap</p>
-
-                <a href="land degradation.html" class="project-btn">
-                    View Full Project
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!--experience design-->
-<section class="experience" id="experience">
-    <h2 class="heading">Experience</h2>
-
-    <div class="experience-container">
-
-        <!-- EXPERIENCE 1 -->
-        <div class="experience-box">
-            <h3>GIS & Mapping Intern / Analyst</h3>
-            <h4>Ramani | May 2024 – August 2024</h4>
-
-            <ul>
-                <li>Gained foundational skills in geospatial data collection, processing, and mapping</li>
-                <li>Produced maps and spatial outputs for various projects</li>
-                <li>Developed proficiency in ArcGIS Pro, QGIS, and basic spatial analysis</li>
-                <li>Supported team workflows and contributed to mapping tasks</li>
-            </ul>
-        </div>
-
-        <!-- EXPERIENCE 2 -->
-        <div class="experience-box">
-            <h3>GIS Attachment</h3>
-            <h4>June 2025 – August 2025</h4>
-
-            <ul>
-                <li>Applied GIS skills to deliver advanced mapping and analysis tasks independently</li>
-                <li>Performed spatial data workflows: cleaning, validation, and preparation</li>
-                <li>Collaborated with the production team on large-scale projects</li>
-                <li>Enhanced problem-solving using multiple GIS tools</li>
-            </ul>
-        </div>
-
-        <!-- EXPERIENCE 3 -->
-        <div class="experience-box">
-            <h3>Mapping Assistant Technician & Assistant Team Leader</h3>
-            <h4>Ramani | August 2025 – March 2026</h4>
-
-            <ul>
-                <li>Led and coordinated mapping activities as Assistant Team Leader</li>
-                <li>Worked on multiple GIS and remote sensing projects</li>
-                <li>Performed spatial analysis and produced high-quality maps</li>
-                <li>Used advanced tools: ArcGIS Pro, QGIS, Global Mapper, Google Earth Engine</li>
-                <li>Ensured data quality, accuracy, and team coordination</li>
-            </ul>
-        </div>
-
-    </div>
-
-</section>
-
-<!--contact me design-->
-<section class="contact" id="contact">
-    <h2 class="heading">Contact Me</h2>
-
-    <div class="contact-container">
-
-        <!-- Email -->
-        <div class="contact-box">
-            <h3>Email</h3>
-            <a href="mailto:dwambua375@gmail.com">dwambua375@gmail.com</a>
-        </div>
-
-        <!-- Phone -->
-        <div class="contact-box">
-            <h3>Phone</h3>
-            <a href="tel:+254711891643">+254 711 891 643</a>
-        </div>
-
-        <!-- LinkedIn -->
-        <div class="contact-box">
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/dennis-wambua-5834b1362/" target="_blank">
-                View Profile
-            </a>
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- JS -->
-    <script src="script.js"></script>
-
-<!-- ... your HTML content ... -->
-
-    <script src="script.js"></script>  <!-- Your existing JS file (if any) -->
-
-    <!-- ADD THIS HERE -->
+    <!-- INTERACTIVE SCRIPT -->
     <script>
-        // Mobile menu toggle
-        let menuIcon = document.querySelector('#menu-icon');
-        let navbar = document.querySelector('.navbar');
+        // Mobile Navigation Toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
 
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('bx-x');
+        menuIcon.addEventListener('click', () => {
             navbar.classList.toggle('active');
-        };
+            menuIcon.classList.toggle('bx-x');
+        });
 
-        // Close menu when a link is clicked
+        // Close navbar when clicking a nav link
         document.querySelectorAll('.navbar a').forEach(link => {
-            link.onclick = () => {
-                menuIcon.classList.remove('bx-x');
+            link.addEventListener('click', () => {
                 navbar.classList.remove('active');
-            }
+                menuIcon.classList.remove('bx-x');
+            });
         });
     </script>
 </body>
-</html>
 
-</body>
 </html>
-
-<!-- git add .
-git commit -m "updated porfolio"
-git push -->

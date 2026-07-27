@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A109 Highway Road Safety Intelligence Dashboard</title>
+    <link rel="icon" type="image/png" href="/Images/home%20image.png">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Dennis Wambua</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="project-details">
+
+        <!-- Title -->
+        <h1 class="project-title">A109 Highway Road Safety Intelligence Dashboard</h1>
+        <p style="text-align: center; color: var(--accent-blue); font-weight: 600; margin-top: -1.8rem; margin-bottom: 2.5rem; font-size: 1.05rem;">
+            Interactive GIS-Based Accident Analysis and Risk Visualization
+        </p>
+
+        <!-- Project Overview -->
+        <div class="project-section">
+            <h2>Project Overview</h2>
+            <p><strong>Project Type:</strong> Web GIS | Transportation Analytics | Spatial Decision Support</p>
+            <p>Road accidents along major transport corridors require data-driven approaches for identifying high-risk areas and supporting targeted safety interventions.</p>
+            <p>This project developed an interactive GIS-based dashboard for the <strong>A109 Nairobi–Mombasa Highway</strong>, integrating accident locations, dangerous road sections, road network characteristics, and terrain information to visualize spatial patterns of road safety risks.</p>
+            <p>The platform transforms raw accident data into an interactive decision-support tool that enables users to explore accident distribution, identify critical locations, and understand spatial factors influencing road safety.</p>
+        </div>
+
+        <!-- Live Dashboard Link -->
+        <div class="project-section" style="background: rgba(16, 185, 129, 0.1); border-color: var(--accent-green);">
+            <h2>Live Dashboard</h2>
+            <p>Explore the deployed application:</p>
+            <p style="font-size: 1.05rem; font-weight: bold; margin-top: 0.5rem;">
+                🔗 <a href="https://a109-highway-dashboard-y76c.onrender.com/" target="_blank" rel="noopener noreferrer">A109 Highway Road Safety Intelligence Dashboard</a>
+            </p>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.4rem;">
+                (Open the live dashboard to interact with accident locations, road features, and spatial analytics.)
+            </p>
+        </div>
+
+        <!-- Dashboard Preview -->
+        <div class="project-section">
+            <h2>Dashboard Preview</h2>
+            <p>Interactive Dashboard Interface showcasing main map view, accident points, filters, statistics, road layers, and terrain visualization:</p>
+            
+            <div class="project-images">
+                <img src="Images/a109-dashboard-preview.jpg" alt="A109 Dashboard Preview Screenshot">
+            </div>
+        </div>
+
+        <!-- Project Objectives -->
+        <div class="project-section">
+            <h2>Project Objectives</h2>
+            <ul>
+                <li>Develop an interactive GIS platform for accident visualization.</li>
+                <li>Identify accident-prone locations along the A109 corridor.</li>
+                <li>Integrate road network and terrain characteristics into accident analysis.</li>
+                <li>Demonstrate the application of Web GIS for transport safety management.</li>
+            </ul>
+        </div>
+
+        <!-- Data Integration -->
+        <div class="project-section">
+            <h2>Data Integration</h2>
+
+            <h3>Accident Dataset</h3>
+            <p>Used to analyze:</p>
+            <ul>
+                <li>Accident locations</li>
+                <li>Spatial distribution patterns</li>
+                <li>Accident concentration areas</li>
+            </ul>
+
+            <h3>Road Network Data</h3>
+            <p>Integrated road characteristics including:</p>
+            <ul>
+                <li>Ground roads</li>
+                <li>Elevated road sections</li>
+                <li>Embankment sections</li>
+            </ul>
+
+            <h3>Terrain Data</h3>
+            <p>Incorporated elevation-based information:</p>
+            <ul>
+                <li>Slope analysis</li>
+                <li>Hillshade visualization</li>
+            </ul>
+            <p>Provides terrain context along the highway corridor.</p>
+        </div>
+
+        <!-- Development Workflow -->
+        <div class="project-section">
+            <h2>Development Workflow</h2>
+
+            <h3>1. Data Preparation</h3>
+            <ul>
+                <li>Cleaned and structured accident datasets.</li>
+                <li>Processed spatial layers.</li>
+                <li>Converted datasets into web-compatible formats.</li>
+            </ul>
+
+            <h3>2. Spatial Database & Processing</h3>
+            <ul>
+                <li>Managed spatial datasets.</li>
+                <li>Performed spatial queries and analysis.</li>
+                <li>Generated map-ready layers.</li>
+            </ul>
+
+            <h3>3. Web GIS Development</h3>
+            <p>Developed a custom interactive dashboard using:</p>
+            <ul>
+                <li><strong>Backend:</strong> Python, Flask, Spatial data processing</li>
+                <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Leaflet.js</li>
+                <li><strong>Data Formats:</strong> GeoJSON, GeoPackage</li>
+            </ul>
+        </div>
+
+        <!-- Key Features -->
+        <div class="project-section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Interactive Accident Mapping:</strong> Visualizes accident locations along the highway corridor.</li>
+                <li><strong>Risk Location Identification:</strong> Highlights dangerous sections requiring attention.</li>
+                <li><strong>Road Classification Visualization:</strong> Displays different road characteristics influencing safety.</li>
+                <li><strong>Terrain Visualization:</strong> Integrates slope and hillshade layers for landscape interpretation.</li>
+                <li><strong>Interactive Exploration:</strong> Allows users to navigate, filter, and analyze spatial information.</li>
+            </ul>
+        </div>
+
+        <!-- Technical Stack -->
+        <div class="project-section">
+            <h2>Technical Stack</h2>
+            <table class="project-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Technologies / Tools</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GIS</strong></td>
+                        <td>ArcGIS Pro, QGIS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Programming</strong></td>
+                        <td>Python, JavaScript, HTML, CSS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Web Mapping</strong></td>
+                        <td>Leaflet.js</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Spatial Data</strong></td>
+                        <td>GeoPackage, GeoJSON</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Deployment</strong></td>
+                        <td>Render Cloud Platform</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Applications -->
+        <div class="project-section conclusion">
+            <h2>Applications</h2>
+            <p>The dashboard can support:</p>
+            <ul>
+                <li>Road safety planning</li>
+                <li>Transport infrastructure assessment</li>
+                <li>Accident hotspot identification</li>
+                <li>Highway improvement strategies</li>
+                <li>Emergency response planning</li>
+            </ul>
+        </div>
+
+        <div class="project-images">
+            <img src="Images/Screenshot 2026-07-21 132233.png" alt="Turkana Dashboard">
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn">
+            <a href="index.html#projects">Back</a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
+
+</body>
+</html>

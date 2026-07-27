@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nairobi Flood Risk Intelligence Dashboard</title>
+    <link rel="icon" type="image/png" href="/Images/home%20image.png">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">Dennis Wambua</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+        <nav class="navbar">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#education">Education</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="project-details">
+
+        <!-- Title -->
+        <h1 class="project-title">Nairobi Flood Risk Intelligence Dashboard</h1>
+        <p style="text-align: center; color: var(--accent-blue); font-weight: 600; margin-top: -1.8rem; margin-bottom: 1.5rem; font-size: 1.05rem;">
+            Web GIS for Urban Flood Risk Assessment & Decision Support
+        </p>
+
+        <!-- Status Badge -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <span style="display: inline-block; padding: 0.4rem 1.2rem; background: rgba(56, 189, 248, 0.15); border: 1px solid var(--accent-blue); color: var(--accent-blue); border-radius: 20px; font-weight: 600; font-size: 0.9rem;">
+                ⚙️ Status: In Development
+            </span>
+        </div>
+
+        <!-- Overview -->
+        <div class="project-section">
+            <h2>Overview</h2>
+            <p>The <strong>Nairobi Flood Risk Intelligence Dashboard</strong> is an integrated Web GIS platform designed to assess, visualize, and monitor flood risk across Nairobi County through advanced geospatial analysis and interactive mapping. The project combines terrain analysis, hydrological modelling, Earth Observation, and urban infrastructure data to identify flood-prone areas and support evidence-based disaster risk management.</p>
+            <p>The platform is being developed as a comprehensive decision-support system that transforms complex environmental and spatial datasets into interactive visualizations, enabling planners, emergency responders, researchers, and policymakers to better understand flood vulnerability, infrastructure exposure, and potential impacts. It aligns with growing interest in using GIS and satellite data to strengthen flood preparedness and urban resilience.</p>
+        </div>
+
+        <!-- Project Objectives -->
+        <div class="project-section">
+            <h2>Project Objectives</h2>
+            <ul>
+                <li>Develop an interactive Web GIS platform for flood risk assessment and visualization.</li>
+                <li>Integrate hydrological, topographic, climatic, and urban infrastructure datasets into a unified geospatial environment.</li>
+                <li>Identify flood-prone areas and vulnerable infrastructure through spatial modelling.</li>
+                <li>Support disaster preparedness, emergency response planning, and resilient urban development.</li>
+                <li>Demonstrate the integration of Python, Web GIS, Remote Sensing, and spatial analytics in flood risk management.</li>
+            </ul>
+        </div>
+
+        <!-- Methodology -->
+        <div class="project-section">
+            <h2>Methodology</h2>
+            <p>The project integrates Digital Elevation Models (DEMs), rainfall observations, land use information, drainage networks, river systems, road infrastructure, and building footprints within a GIS-based analytical framework. Hydrological modelling and terrain analysis are used to delineate flood-prone areas, while spatial overlay techniques evaluate exposure of infrastructure and settlements.</p>
+            <p>Processed datasets are incorporated into an interactive Web GIS application that enables dynamic exploration of flood susceptibility, hazard zones, and supporting environmental information through an intuitive dashboard interface.</p>
+        </div>
+
+        <!-- Development Progress -->
+        <div class="project-section">
+            <h2>Development Progress</h2>
+            <p>The project is currently progressing through the integration of geospatial datasets, hydrological analysis, and interactive dashboard development. The analytical framework and system architecture have been established, with ongoing work focused on implementing automated spatial workflows, dynamic visualization, and enhanced decision-support functionality.</p>
+            <p>Future development will continue to expand analytical capabilities, improve user interaction, and strengthen the integration of environmental, hydrological, and infrastructure datasets into a comprehensive flood intelligence platform.</p>
+        </div>
+
+        <!-- Expected Outcome -->
+        <div class="project-section conclusion">
+            <h2>Expected Outcome</h2>
+            <p>Upon completion, the Nairobi Flood Risk Intelligence Dashboard will provide a modern Web GIS platform for analysing flood susceptibility, infrastructure exposure, and urban vulnerability through interactive maps and spatial analytics. The system is intended to demonstrate the application of GIS, Remote Sensing, Python, and Web GIS technologies in supporting flood preparedness, resilient urban planning, and informed decision-making.</p>
+        </div>
+
+        <div class="project-images">
+            <img src="Images/Screenshot 2026-07-21 182639.png" alt="Turkana Dashboard">
+        </div>
+
+        <!-- Back Button -->
+        <div class="back-btn">
+            <a href="index.html#projects">Back</a>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('.navbar');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            navbar.classList.toggle('active');
+        };
+    </script>
+
+</body>
+</html>

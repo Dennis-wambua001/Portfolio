@@ -1,366 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dennis Wambua - CV</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae — Dennis Wambua Samson</title>
+  <link rel="icon" type="image/png" href="/Images/home%20image.png">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <style>
+    :root {
+      --bg-body: #b6b8bb;
+      --paper-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #475569;
+      --accent-color: #059669;
+      --border-color: #e2e8f0;
+    }
 
-        body {
-            background: #d0d1d4;
-            padding: 2rem;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .cv {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      padding: 6rem 1rem 2rem 1rem; /* Added top padding so content isn't covered by fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        /* Name & Title */
-        .cv h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.3rem;
-            text-align: center;
-        }
+    /* MAIN SITE HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.3rem 9%;
+      background: #230edf;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .cv h2 {
-            font-size: 1.6rem;
-            color: #010305;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
+    .logo {
+      font-size: 1.7rem;
+      color: #ffffff;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-        .cv .contact {
-            font-size: 1.2rem;
-            color: #555;
-            margin-bottom: 2rem;
-            
-            text-align: center;
-            font-size: 1.4rem;
-        }
+    .navbar {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
 
-        .cv .contact a {
-            color: #1a4ec7;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.4rem;
-        }
+    .navbar li a {
+      font-size: 1rem;
+      color: #ffffff;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-        /* All headings */
-        .cv h3 {
-            font-size: 1.8rem;
-            color: #1a4ec7;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #68e1e7;
-            padding-bottom: 0.3rem;
-            text-align: center;
-        }
+    .navbar li a:hover,
+    .navbar li a.active {
+      color: var(--accent-color);
+    }
 
-        .cv h4 {
-            font-size: 1.4rem;
-            margin-top: 1rem;
-            margin-bottom: 0.3rem;
-        }
+    #menu-icon {
+      font-size: 2rem;
+      color: #ffffff;
+      display: none;
+      cursor: pointer;
+    }
 
-        .cv p {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
+    /* ACTION BUTTONS (Hidden during printing) */
+    .action-bar {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
 
-        .cv ul {
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-        }
+    .btn-back {
+      background: transparent;
+      color: #94a3b8;
+      border: 1px solid #334155;
+    }
 
-        .cv ul li {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #333;
-            margin-bottom: 0.3rem;
-        }
+    .btn-back:hover {
+      color: #ffffff;
+      border-color: #64748b;
+    }
 
-        /* Research Interests - as paragraphs */
-        .cv .research p {
-            margin-bottom: 1rem;
-        }
+    .btn-print {
+      background: var(--accent-color);
+      color: #ffffff;
+      border: none;
+    }
 
-        /* Education */
-        .cv .edu-item {
-            margin-bottom: 1.5rem;
-        }
+    .btn-print:hover {
+      background: #047857;
+    }
 
-        .cv .edu-item p {
-            font-size: 1.2rem;
-            color: #555;
-        }
+    /* A4 / WORD PAPER CANVAS */
+    .paper {
+      background: var(--paper-bg);
+      width: 100%;
+      max-width: 800px;
+      padding: 3rem 3.5rem;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      line-height: 1.5;
+    }
 
-        /* Experience */
-        .cv .exp-item {
-            margin-bottom: 2rem;
-        }
+    /* PAPER HEADER / NAME SECTION */
+    .paper header {
+      border-bottom: 2px solid var(--accent-color);
+      align-items: center;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
 
-        .cv .exp-item p {
-            color: #555;
-            font-style: italic;
-        }
+    .paper header h1 {
+      font-size: 2.2rem;
+      color: var(--text-dark);
+      letter-spacing: -0.5px;
+      margin-bottom: 0.3rem;
+      align-items: center;
+    }
 
-        /* Skills - simple list */
-        .cv .skills-list {
-            list-style: none;
-            padding-left: 0;
-        }
+    .paper header .subtitle {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 0.8rem;
+    }
 
-        .cv .skills-list li {
-            margin-bottom: 0.5rem;
-        }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
 
-        /* Referees */
-        .cv .referee {
-            margin-bottom: 1.5rem;
-        }
+    .contact-info a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
 
-        .cv .referee p {
-            color: #555;
-            margin: 0.2rem 0;
-        }
+    /* SECTION TITLES */
+    section {
+      margin-bottom: 1.8rem;
+    }
 
-        .back-btn {
-            display: block;
-            width: fit-content;
-            margin: 1rem auto;
-            padding: 1rem 1.4rem;
-            background: #68e1e7;
-            color: #1a4ec7;
-            border-radius: 1.4rem;
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: 0.3s ease;
-            box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
-        }
-        .back-btn:hover {
-            transform: scale(1.05);
-            box-shadow: none;
-        }
+    h2.section-title {
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            body {
-                padding: 0 !important;
-                margin: 0 !important;
-                padding: 2rem;
-            }
-            .cv {
-                max-width: 94% !important;
-                width: 94% !important;
-                margin: 0.1 !important;
-                padding: 2rem 1.5rem !important;
-                border-radius: 5 !important;
-                box-shadow: none !important;
-                box-sizing: border-box !important;
-            }
+    /* CONTENT STYLING */
+    p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      text-align: justify;
+    }
 
-            .cv {
-                max-width: 90%;
-                padding: 1.5rem;
-                border-radius: 0;
-            }
-            .cv h1 {
-                font-size: 1.4rem;
-                max-width: 100%;
-            }
-            .cv h2 {
-                font-size: 1rem;
-                max-width: 100%;
-            }
-            .cv h3 {
-                font-size: 1rem;
-                max-width: 100%;
-            }
-            .cv h4 {
-                font-size: 1rem;
-                max-width: 100%;
-            }
+    .job-item, .edu-item, .cert-item {
+      margin-bottom: 1.2rem;
+    }
 
-            .cv .edu-item p {
-                font-size: 1rem;
-                color: #555;
-            }
+    .job-header, .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.3rem;
+    }
 
-            .cv p, .cv ul li {
-                font-size: 1rem;
-                max-width: 100%;
-            }
-            .cv .contact {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 2rem;
-            text-align: center;
-            }
-            .cv .contact a {
-            color: #1a4ec7;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1rem;
-            }
+    .title-bold {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text-dark);
+    }
 
-            .back-btn {
-                display: block;
-                width: fit-content;
-                margin: 1rem auto;
-                padding: 1rem 1.4rem;
-                background: #68e1e7;
-                color: #1a4ec7;
-                border-radius: 1rem;
-                text-decoration: none;
-                font-size: 0.6rem;
-                font-weight: 600;
-                transition: 0.3s ease;
-                box-shadow: 0 0 1rem rgba(104, 225, 231, 0.4);
-            }
-            .back-btn:hover {
-               transform: scale(1.05);
-               box-shadow: none;
-            }
-        }
-    </style>
+    .date-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .org-sub {
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    ul.bullet-list {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .skill-category h3 {
+      font-size: 0.88rem;
+      color: var(--accent-color);
+      margin-bottom: 0.3rem;
+    }
+
+    .skill-category p {
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    /* PRINT STYLES (For PDF / Direct Printing) */
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .header, .action-bar {
+        display: none;
+      }
+      .paper {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1.3rem 5%;
+      }
+      #menu-icon {
+        display: block;
+      }
+      .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 5%;
+        background:  rgba(106, 139, 223, 0.98);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .navbar.active {
+        display: flex;
+      }
+      .paper {
+        padding: 1.8rem 1.5rem;
+      }
+      .job-header, .edu-header {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="cv">
+  <!-- PORTFOLIO HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">Dennis Wambua</a>
+    <i class="bx bx-menu" id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#services">Coverage</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </nav>
+  </header>
 
-        <!-- Name & Title -->
-        <h1>Dennis Wambua</h1>
-        <h2>Geospatial Analyst | Data Analyst | Environmentalist</h2>
-        <div class="contact">
-            Department of Humanities<br>
-            School of Education and Social Sciences<br>
-            Karatina University, P.O Box 1957-10101<br>
-            <a href="mailto:dwambua375@gmail.com">dwambua375@gmail.com</a> | 
-            <a href="mailto:samson.wambua@s.karu.ac.ke">samson.wambua@s.karu.ac.ke</a><br>
-            Mobile: +254 759 790 998 | 711 891 643<br>
-            Website: <a href="https://karu.ac.ke" target="_blank">https://karu.ac.ke</a>
-        </div>
+  <!-- PAPER CANVAS -->
+  <main class="paper">
 
-        <!-- Research Interests -->
-        <h3>Research Interests</h3>
-        <div class="research">
-            <p>Understanding geographical concepts and methodologies to apply academic knowledge and develop practical skills.</p>
-            <p>Gaining hands-on experience in utilizing geospatial technologies.</p>
-            <p>Exploring advanced geographical concepts and methodologies to apply and enhance academic knowledge while developing practical skills.</p>
-        </div>
+    <!-- 1. NAME & CONTACT INFO -->
+    <header>
+      <h1>Dennis Wambua Samson</h1>
+      <div class="subtitle">GIS & Remote Sensing Analyst | Geospatial Researcher</div>
+    </header>
 
-        <!-- Education -->
-        <h3>Education</h3>
-        <div class="edu-item">
-            <h4>Bachelor of Arts in Geography</h4>
-            <p>Karatina University • 2022 to date (waiting for graduation)</p>
-        </div>
-        <div class="edu-item">
-            <h4>Kenya Certificate of Secondary Education (KCSE)</h4>
-            <p>Kivuthini Secondary School, Kibwezi, Makueni • 2018 – 2022</p>
-        </div>
-        <div class="edu-item">
-            <h4>Kenya Certificate of Primary Education (KCPE)</h4>
-            <p>Ave Maria Boarding and Day Mixed Primary School • 2013 – 2018</p>
-        </div>
+    <!-- 2. PROFESSIONAL SUMMARY -->
+    <section>
+      <h2 class="section-title">Professional Summary</h2>
+      <p>
+        GIS & Remote Sensing Analyst with experience in geospatial data processing, satellite image analysis, infrastructure mapping and spatial modelling. Skilled in developing GIS workflows using ArcGIS Pro, QGIS, Google Earth Engine and geospatial visualization tools to support environmental monitoring, land management and spatial decision-making. Experienced in quality assurance, field data collection and research-based geospatial analysis, delivering accurate and reliable spatial solutions.
+      </p>
+    </section>
 
-        <!-- Work Experience -->
-        <h3>Work Experience</h3>
-        <div class="exp-item">
-            <h4>Mapping Assistant & Team Leader</h4>
-            <p>Ramani Geosystem • August 2025 – March 2026</p>
-            <ul>
-                <li>Contributed to 2D mapping of infrastructure projects, ensuring accurate spatial data production and quality control.</li>
-                <li>Assisted in leading and coordinating a team of 10 members, guiding workflows to meet project timelines and productivity targets.</li>
-                <li>Applied GIS and remote sensing techniques to improve mapping accuracy and data interpretation.</li>
-                <li>Utilized industry GIS tools to process, analyze, and manage spatial datasets for infrastructure mapping.</li>
-                <li>Maintained high standards of data quality and consistency while delivering required output volumes.</li>
-                <li>Developed strong leadership, project coordination, and quality management skills through team supervision and task delegation.</li>
-            </ul>
-        </div>
-        <div class="exp-item">
-            <h4>Mapping Assistant</h4>
-            <p>Ramani Geosystem • May 2024 – August 2024</p>
-            <ul>
-                <li>Conducted 2D mapping of various infrastructure projects, ensuring accurate and detailed representations of project sites.</li>
-                <li>Participated in field surveys to gather geospatial data and verify mapping information on-site.</li>
-                <li>Assisted in quality control processes to ensure the accuracy and reliability of mapping data.</li>
-                <li>Worked closely with project managers and engineers to incorporate mapping insights into project planning and execution.</li>
-                <li>Developed advanced skills in using Geographic Information System (GIS) software for mapping and spatial analysis.</li>
-                <li>Gained hands-on experience in collecting, processing, and managing spatial data for infrastructure projects.</li>
-                <li>Enhanced teamwork and communication skills by working closely with multidisciplinary teams.</li>
-                <li>Strengthened attention to detail and accuracy in mapping data.</li>
-                <li>Acquired problem-solving skills in resolving spatial data discrepancies.</li>
-                <li>Learned field survey techniques to gather ground-truth data and validate mapping information on-site.</li>
-            </ul>
-        </div>
+    <!-- 3. EXPERIENCE -->
+    <section>
+      <h2 class="section-title">Professional Experience</h2>
 
-        <!-- Associations -->
-        <h3>Associations and Membership</h3>
-        <h4>Member of Geographical Information Systems (GIS) Club</h4>
-        <p><strong>Role:</strong> Chairperson</p>
-        <p>• April 2025 – May 2026</p>
-        <ul>
-            <li>Work with fellow members to undertake various projects utilizing geospatial data analysis, mapping and the use of QGIS and ArcGIS Pro.</li>
-            <li>Actively participate in the GIS club to create a community of GIS professionals and students who share a passion for geospatial technology and its application.</li>
+      <!-- ROLE 1 -->
+      <div class="job-item">
+        <div class="job-header">
+          <span class="title-bold">GIS & Remote Sensing Consultant (Research Projects)</span>
+        </div>
+        <div class="org-sub">Independent Research Collaborations</div>
+        <ul class="bullet-list">
+          <li><strong>Groundwater Potential Mapping (Lake Bosomtwe, Ghana):</strong> Developed an integrated GIS-based groundwater potential assessment using Multi-Criteria Decision Analysis (MCDA-AHP). Processed multi-source datasets (geology, slope, rainfall, soil, LULC, drainage) using weighted overlay modeling.</li>
+          <li><strong>Fish Farming Suitability Analysis (Nyeri County, Kenya):</strong> Conducted spatial analysis and thematic mapping to assess aquaculture distribution patterns, production hotspots, and site suitability metrics supporting agricultural research.</li>
         </ul>
-        <h4>Student Member, Environmental Institution of Kenya (EIK)</h4>
-        <p>Participates in professional development activities and environmental knowledge exchange.</p>
+      </div>
 
-        <!-- Key Skills -->
-        <h3>Key Skills</h3>
-        <ul class="skills-list">
-            <li><strong>a)</strong> Proficient in QGIS (Quantum Geographic Information System) for spatial data analysis, map production, and geospatial data management.</li>
-            <li><strong>b)</strong> Experienced with ArcMap and ArcGIS Pro for mapping, geoprocessing, map production and spatial analysis.</li>
-            <li><strong>c)</strong> Skilled in 2D infrastructure mapping and spatial data digitization for geospatial projects.</li>
-            <li><strong>d)</strong> Knowledge of remote sensing techniques and interpretation of satellite imagery for mapping and analysis.</li>
-            <li><strong>e)</strong> Experience in field survey techniques, ground-truth data collection, and validation of spatial datasets.</li>
-            <li><strong>f)</strong> Competent in geospatial data management, including data cleaning, validation, and quality control.</li>
-            <li><strong>g)</strong> Strong map design and cartographic visualization skills for clear spatial communication.</li>
-            <li><strong>h)</strong> Ability to coordinate and supervise teams, ensuring timely delivery of high-quality mapping outputs.</li>
-            <li><strong>i)</strong> Experience in project coordination and workflow management within GIS projects.</li>
-            <li><strong>j)</strong> Strong problem-solving and analytical skills in spatial data interpretation.</li>
-            <li><strong>k)</strong> Proficient in Microsoft Office for documentation, reporting, and data organization.</li>
-            <li><strong>l)</strong> Effective teamwork, leadership, and communication skills in multidisciplinary project environments.</li>
+      <!-- ROLE 2 -->
+      <div class="job-item">
+        <div class="job-header">
+          <span class="title-bold">GIS & Mapping Assistant</span>
+        </div>
+        <div class="org-sub">Ramani Geosystem - Nairobi, Kenya</div>
+        <ul class="bullet-list">
+          <li>Produced high-accuracy 2D infrastructure maps using ArcGIS Pro and QGIS to support engineering project planning.</li>
+          <li>Implemented Quality Assurance (QA) procedures on spatial datasets, reducing data inconsistencies and improving mapping accuracy.</li>
+          <li>Led field data collection campaigns utilizing GPS technology and ground truthing techniques to enhance mapping reliability.</li>
+          <li>Collaborated with cross-functional teams to digitize, georeference, and analyze spatial data within tight project deadlines.</li>
         </ul>
+      </div>
 
-        <!-- Referees -->
-        <h3>Referees</h3>
-        <div class="referee">
-            <h4>Dr. Peter Musyimi</h4>
-            <p>Lecturer, Department of Humanities and Languages</p>
-            <p>School of Education and Social Sciences, Karatina University</p>
-            <p>P.O Box 1957-10101, Karatina, Kenya</p>
-            <p>Email: pkinyae@karu.ac.ke</p>
+      <!-- ROLE 3 -->
+      <div class="job-item">
+        <div class="job-header">
+          <span class="title-bold">GIS & Mapping Intern</span>
         </div>
-        <div class="referee">
-            <h4>Dr. Tom Ouna</h4>
-            <p>Lecturer, Department of Humanities and Languages</p>
-            <p>School of Education and Social Sciences, Karatina University</p>
-            <p>P.O Box 1957-10101, Karatina, Kenya</p>
-            <p>Email: touna@karu.ac.ke</p>
-            <p>Website: <a href="https://profiles.karu.ac.ke/wp-content/uploads/2024/01/Dr.-Tom-Ouna.pdf" target="_blank">https://profiles.karu.ac.ke/wp-content/uploads/2024/01/Dr.-Tom-Ouna.pdf</a></p>
-        </div>
+        <div class="org-sub">Ramani Geosystem - Nairobi, Kenya</div>
+        <ul class="bullet-list">
+          <li>Contributed to infrastructure mapping datasets through spatial analysis, digitization, and georeferencing.</li>
+          <li>Participated in field surveys to gather location-based attribute data, improving overall mapping precision.</li>
+        </ul>
+      </div>
+    </section>
 
-        <!-- BACK BUTTON -->
-        <div class="back-btn">
-            <a href="index.html#home">Back</a>
+    <!-- 4. SKILLS -->
+    <section>
+      <h2 class="section-title">Key Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>GIS & Mapping Software</h3>
+          <p>ArcGIS Pro, ArcGIS Desktop, QGIS, Global Mapper, Google Earth Engine, ESRI Dashboards.</p>
         </div>
-    </div>
+        <div class="skill-category">
+          <h3>Remote Sensing & Analysis</h3>
+          <p>Sentinel-2, Landsat, Time-Series Analysis, Change Detection, Spectral Indices (NDVI, NDWI, EVI), LULC Mapping.</p>
+        </div>
+        <div class="skill-category">
+          <h3>Data Processing & QA</h3>
+          <p>Vector/Raster Analytics, Suitability Analysis (MCDA-AHP), Spatial Data Cleaning & Validation, Geodatabase Management.</p>
+        </div>
+        <div class="skill-category">
+          <h3>Fieldwork & Analytics</h3>
+          <p>GPS Data Collection, Ground Truthing, Field Surveys, Microsoft Excel (Data Analysis), Cartographic Design.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. EDUCATION -->
+    <section>
+      <h2 class="section-title">Education</h2>
+      
+      <div class="edu-item">
+        <div class="edu-header">
+          <span class="title-bold">Bachelor of Arts in Geography (GIS, Remote Sensing & Environmental Studies)</span>
+        </div>
+        <div class="org-sub">Karatina University - Karatina, Kenya</div>
+        <p style="font-size: 0.88rem;"><strong>Coursework:</strong> GIS Applications, Remote Sensing, Cartography, Geospatial Data Analysis, Land Use Planning, EIA.</p>
+      </div>
+
+    </section>
+
+    <!-- 6. CERTIFICATIONS -->
+    <section>
+      <h2 class="section-title">Certifications & Training</h2>
+      <ul class="bullet-list">
+        <li><strong>Cartography MOOC</strong> — Esri <em>(Advanced cartographic principles and map design)</em></li>
+        <li><strong>GIS Fundamentals</strong> — Esri <em>(Spatial data management & workflows)</em></li>
+        <li><strong>The Global Information System</strong> — FAO <em>(Completed Jan 2026)</em></li>
+        <li><strong>Remote Sensing Applications</strong> — Online Certification <em>(Satellite interpretation & environmental monitoring)</em></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <div class="action-bar" style="margin-top: 1.5rem;">
+    <a href="index.html" class="btn btn-back">
+      <i class></i> Back 
+    </a>
+  </div>
+
+  <script>
+    const menuIcon = document.querySelector('#menu-icon');
+    const navbar = document.querySelector('#navbar');
+
+    menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('bx-x');
+      navbar.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuIcon.classList.remove('bx-x');
+        navbar.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
